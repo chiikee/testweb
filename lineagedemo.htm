@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style>
+body{
+	font-size:x-small;
+}
+.list-group-item {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.col-xs-2{
+	width:300px;
+}
+
+.jtk-connector { z-index:4; }
+.jtk-endpoint { z-index:6; }
+.jtk-overlay { z-index:7; }
+
+.connector-normal { z-index:4; }
+.connector-selected { z-index:5; }
+
+</style>
+</head>
+<body>
+<div id="jsplumbcontainer"></div>
+<div class="navbar navbar-inverse">
+<div class="container-fluid" style="border-bottom: thick solid red;"><div class="navbar-left navbar-brand">Hic Sunt Leones</div>
+<div class="navbar-form navbar-left"><button class="btn btn-default" id="btnHideUnlink" onclick="ToggleConnected()">Hide Unlinked</button>
+<button class="btn btn-default" id="btnShowSelect" onclick="ToggleHighlight()">Show Selected Only</button></div>
+<div class="navbar-right"><img style="padding:9px;" src="http://mydbs.net/Pages/home/images/logo-white.png"></div></div></div>
+<div class="container-fluid text-right" style="margin-top: -15px;margin-bottom:10px;font-size:0.8em"><b>Made Joyful with</b> <span style="color:darkred;font-family:'Bauhaus 93',Monospace;font-size:1.2em">MEGA</span>&nbsp;</div>
+<div class="container-fluid">
+<div class="row" id="Layer_Row">
+</div>
+</div>
+<div class="container" id="Container_Loading">
+<div class="jumbotron">
+  <h1>Loading...</h1>
+  <p>Extracting Lineage from MEGA Servers</p>
+  <div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+    <span class="sr-only">100% Complete</span>
+  </div>
+</div>
+</div>
+</div>
+<div class="container" id="Container_Error" style="display:none">
+<div class="jumbotron">
+  <h1>Oops...</h1>
+  <p>Something went wrong and we think it is because of <i>&quot;<span class="text-warning" id="Error_Description">Insert helpful and descriptive error message here :)</span>&quot;</i>...Probably...</p>
+</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jsplumb.min.js "></script>
+<script>
+var jsonLineage;
+var unlinkedShown = true;
+var highlightOnly = false;
+var unlinkedStateprev = true;
+
+//hide buttons first until loading is complete
+$("#btnShowSelect").hide();
+$("#btnHideUnlink").hide();
+
+//A4C8B122596D1D42
+var hexid = getURLParameter("hexid");
+
+data = $.getJSON("lineagedemo.json", function( data ) {
+	var items = [];
+	var lsHTML = "";
+	var lsLayer,lsApp,liLayerCount;
+	
+	jsonLineage = data;
+	
+	if(data.Error != null){
+		$("#Container_Loading").hide();
+		$("#Container_Error").show();
+		$("#Error_Description").text(data.Error);
+		return;
+	}
+	
+	//start with layers
+	liLayerCount = 0;
+	$.each( data.Layers, function( key, val ) {
+		lsLayer = key;
+		$( "<div/>", {"class": "col-xs-2","id":lsLayer}).appendTo( "#Layer_Row" );
+		
+		//build apps
+		$.each( val.Applications, function( key, val ) {
+			lsApp = lsLayer + "_" + key;
+			lsHTML = "<div class='panel-heading'>" + val.Name + "</div><div class='panel-body' id='" + lsApp + "'>";
+			$( "<div/>", {"class": "panel panel-default",html:lsHTML}).appendTo("#"+lsLayer);
+			
+			//build tables
+			$.each( val.Tables, function( key, val ) {
+				items = [];
+				items.push("<a class='list-group-item active' id='" + val + "'>" + data.Tables[val].Name + "</li>");
+				$.each( data.Tables[val].Columns, function( key, val ) {
+				items.push( "<a class='list-group-item mega-column' id='" + key + "'>" + val.Name + "</li>" );
+				});
+
+				$( "<div/>", {
+				"class": "list-group",
+				html: items.join( "" )
+				}).appendTo( "#"+lsApp );
+			});
+		});
+		liLayerCount++
+	});
+	$("#Layer_Row").attr("style","width:"+liLayerCount*301 +"px !important");
+	
+	//hide the loading screen
+	$("#Container_Loading").hide();
+	//at the very end show the buttons
+	$("#btnShowSelect").show();
+	$("#btnHideUnlink").show();
+	
+	jsPlumb.bind("ready", function() {
+		jsPlumb.importDefaults({
+			ConnectionsDetachable   : false,
+			Endpoints: [ [ "Dot", { radius:5 } ], [ "Dot", { radius:5 } ] ],
+			Container:"jsplumbcontainer"
+		});
+
+		jsPlumb.registerConnectionTypes({
+		  "basic": {
+			paintStyle:{strokeWidth:2,stroke:"rgba(0,0,0,0.5)"},
+			hoverPaintStyle:{strokeWidth:2,stroke:"rgba(255,255,0,0.5)"},
+			cssClass:"connector-normal"
+		  },
+		  "selected":{
+			paintStyle:{strokeWidth:2,stroke:"rgba(255,0,0,1)"},
+			hoverPaintStyle:{strokeWidth:2,stroke:"rgba(255,255,0,0.5)"},
+			cssClass:"connector-selected"
+		  } 
+		});
+		
+		jsPlumb.registerEndpointTypes({
+		  "basic":{         
+			paintStyle:{fill:"#456"}
+		  },
+		  "selected":{          
+			paintStyle:{fill:"red"}
+		  }
+		});
+		
+		$.each( data.Connections, function( key, val ) {
+			// your jsPlumb related init code goes here
+			jsPlumb.connect({
+			source:val.Source,
+			target:val.Target,
+			anchors:["Right", "Left" ],
+			type:"basic",
+			connector:[ "Bezier", { curviness:50 }]
+			});
+		});
+		
+		jsPlumb.bind("click", function(connection) {
+			connection.toggleType("selected");
+		});
+	});
+	
+	//add click event handler to columns with connections
+	$(".mega-column").click(function(){
+		if(highlightOnly){return}; //no node highlighting when in highlight mode	
+		//clean up highlights
+		jsPlumb.select().setType("basic");
+		//jsPlumb.selectEndpoints().setType("basic");
+		$(".mega-column").removeClass("list-group-item-info list-group-item-success mega-column-highlight");
+		//now highlight up and down
+		HighlightNode(this.id,true);
+		HighlightNode(this.id,false);
+		//highlight the selected node specially
+		$(this).removeClass("list-group-item-info").addClass("list-group-item-success");
+	});
+	
+	if(getURLParameter("select")!=null){
+		var selected = getURLParameter("select")
+		if($("#"+selected)!=null){
+			HighlightNode(selected,true);
+			HighlightNode(selected,false);
+			$("#"+selected).removeClass("list-group-item-info").addClass("list-group-item-success");
+			ToggleHighlight();
+		}
+	}
+}); 
+
+function ToggleConnected(){
+	unlinkedShown = !unlinkedShown;
+	$(".mega-column").not(".jtk-connected").toggle();
+	jsPlumb.repaintEverything();
+	if(unlinkedShown){$("#btnHideUnlink").text("Hide Unlinked");}else{$("#btnHideUnlink").text("Show Unlinked");};
+}
+
+function ToggleHighlight(){
+	highlightOnly = !highlightOnly;
+	if(highlightOnly){
+		//hide unlinked
+		unlinkedStateprev = false;
+		if(unlinkedShown){
+			unlinkedStateprev = true;
+			ToggleConnected();
+		}
+		 //hide all the non highlighted stuff
+		$(".jtk-connected").not(".mega-column-highlight").toggle();
+		jsPlumb.selectEndpoints({element:$(".jtk-connected").not(".mega-column-highlight")}).setVisible(false);
+		jsPlumb.repaintEverything();
+	}else{
+		if(unlinkedStateprev&&!unlinkedShown){
+			ToggleConnected();
+		}
+		$(".jtk-connected").not(".mega-column-highlight").toggle();
+		jsPlumb.repaintEverything();
+		jsPlumb.selectEndpoints({element:$(".jtk-connected").not(".mega-column-highlight")}).setVisible(true);
+	}
+	if(highlightOnly){$("#btnShowSelect").text("Show Everything");}else{$("#btnShowSelect").text("Show Selected Only");};
+}
+
+function HighlightLines(objectid,isDownstream){
+	if(isDownstream){
+		jsPlumb.select({source:objectid}).setType("selected");
+		//jsPlumb.selectEndpoints({source:objectid}).setType("selected");
+	}else{
+		jsPlumb.select({target:objectid}).setType("selected"); 		
+		//jsPlumb.selectEndpoints({target:objectid}).setType("selected");
+	}
+}
+
+function HighlightNode(nodeid,propogatedown){
+	//highlight stuff
+	$("#"+nodeid).addClass("list-group-item-info mega-column-highlight");
+	HighlightLines(nodeid,propogatedown);
+	//then loop through the connections collection and call for up or down depending on the flag
+	$.each( jsonLineage.Connections, function( key, val ) {
+		if(propogatedown){
+			if(val.Source==nodeid){
+				HighlightNode(val.Target,propogatedown);
+			}
+		}else{
+			if(val.Target==nodeid){
+				HighlightNode(val.Source,propogatedown);
+			}
+		}
+	});
+}
+
+function getURLParameter(param) {
+	if (!window.location.search) {
+		return;
+	}
+	var m = new RegExp(param + '=([^&]*)').exec(window.location.search.substring(1));
+	if (!m) {
+		return;
+	}
+	return decodeURIComponent(m[1]);
+}
+
+</script>
+</body>
+</html>
