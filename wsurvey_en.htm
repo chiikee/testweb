@@ -1,0 +1,2616 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://luckybancho.ldblog.jp/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <link rel="stylesheet" href="http://parts.blog.livedoor.jp/css/template.css?v=20130404" type="text/css">
+  <link rel="stylesheet" href="http://luckybancho.ldblog.jp/site.css?_=20130917220302" type="text/css">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://luckybancho.ldblog.jp/index.rdf">
+
+  <link rel="stylesheet" href="http://luckybancho.ldblog.jp/wsurvey/css/wsurvey.css" type="text/css">
+
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="http://luckybancho.ldblog.jp/atom.xml">
+  <link rel="openid.server" href="http://auth.livedoor.com/openid/server">
+  <link rel="openid.delegate" href="http://profile.livedoor.com/luckybancho/">
+  <link rel="next" href="http://luckybancho.ldblog.jp/?p=2">
+
+  <link rel="alternate" media="handheld" type="application/xhtml+xml" href="http://blog.m.livedoor.jp/luckybancho/">
+
+  <title>The diaspora Lodestone : World Survey</title>
+  <script>
+    window["_GOOG_TRANS_EXT_VER"] = "1";
+  </script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+  <link type="text/css" href="http://luckybancho.ldblog.jp/wsurvey/css/jquery.jscrollpane.css" rel="stylesheet" media="all">
+
+
+  <!--<link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">-->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <!--<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>-->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+  <script src="http://luckybancho.ldblog.jp/wsurvey/js/jquery.blockUI.js"></script>
+  <script type="text/javascript" src="http://luckybancho.ldblog.jp/wsurvey/js/jquery.mousewheel.js"></script>
+  <script type="text/javascript" src="http://luckybancho.ldblog.jp/wsurvey/js/jquery.jscrollpane.min.js"></script>
+
+  <script src="http://luckybancho.ldblog.jp/wsurvey/js/wsurvey.js"></script>
+  <script src="http://luckybancho.ldblog.jp/wsurvey/js/jkl-dumper.js"></script>
+  <script type="text/javascript" src="http://luckybancho.ldblog.jp/wsurvey/js/world.js"></script>
+
+
+  <script type="text/javascript">
+    $(function() {
+
+      $('.scroll_area').jScrollPane();
+
+      var params = get_url_vars();
+      if ("world" in params) {
+        setWorld(params["world"]);
+      }
+      else {
+        setWorld("Atomos");
+      }
+      var MY_HOST = window.location.hostname;
+      var re = new RegExp("^http://([^/]+)/.*");
+      var x = re.exec(document.referrer);
+
+      if (x && x[1] != MY_HOST) {
+        setTimeout(function() {
+          yubi();
+        }, 5000);
+      }
+
+    });
+  </script>
+  <script src="http://luckybancho.ldblog.jp/wsurvey/js/en.js"></script>  
+
+  <!--[if IE 6]>
+<script type="text/javascript" src="http://www.daletto.com/js/blog/belated_png.js"></script>
+<script>
+DD_belatedPNG.fix('.forBigginer , .forMember , .main_bg , .pager');
+</script>
+<![endif]-->
+</head>
+
+<body class="index" data-twttr-rendered="true">
+  <script type="text/javascript">
+    <!--
+    var ld_blog_vars = {
+      provider_id: '1',
+      provider_name: 'livedoor',
+      id: '5785040',
+      name: 'luckybancho',
+      charset: 'utf8',
+      url: 'http://luckybancho.ldblog.jp/',
+      title: 'The diaspora Lodestone',
+      blog_design: {
+        version: 1
+      },
+      blog_category: {
+        id: '62',
+        permalink: 'http://blog.livedoor.com/category/62/',
+        name: 'ゲーム(総合) > PCゲーム・オンラインゲーム',
+        is_adult: 0,
+        is_gambling: 0,
+        hierarchy: [{
+          id: '58',
+          name: 'ゲーム(総合)',
+          permalink: 'http://blog.livedoor.com/category/58/'
+        }, {
+          id: '62',
+          name: 'PCゲーム・オンラインゲーム',
+          permalink: 'http://blog.livedoor.com/category/62/'
+        }]
+      },
+      current_page: {
+        type: 'index',
+        page: '1'
+      },
+      articles: []
+    };
+    //-->
+  </script>
+  <div id="analyzer_tags" style="display: none"></div>
+  <a name="top"></a>
+  <div class="main_bg">
+    <!-- ............... Header ............... -->
+    <!-- Blog Common Header // -->
+    <!-- // Blog Common Header -->
+
+    <!-- ............... Container ............... -->
+    <div id="container">
+
+      <!-- ..... Title ..... -->
+      <div class="blog-title-outer">
+        <div class="blog-title-outer-2">
+          <div class="blog-title-outer-3">
+            <a id="blog-logo" href="http://luckybancho.ldblog.jp/" title="The diaspora Lodestone トップへ"></a>
+          </div>
+
+          <div id="bLangSelect">
+            <table>
+              <tr>
+                <td></td>
+                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/arrow.png"></td>
+              </tr>
+              <tr>
+                <td>
+                  <a id="lang_other" href="http://luckybancho.ldblog.jp/wsurvey.htm"><img src="http://luckybancho.ldblog.jp/wsurvey/images/ja.png"></a>
+                </td>
+                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/en.png"></td>
+              </tr>
+            </table>
+          </div>
+          <div id="btWorldSelect">
+            <a onclick="showWorldSelect();"></a>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="content-outher">
+        <div id="content" class="hfeed">
+          <div id="titleimage">
+            <div id="title-wrap">
+              <span id="world-title"></span>
+            </div>
+
+          </div>
+
+          <div id="servey-main">
+
+            <!-- サマリー Start -->
+            <div id="survey-info-wrap" class="article-outer hentry">
+              <div class="article-outer-2">
+                <div class="article-outer-3">
+
+                  <div class="article-header">
+                    <div class="article-title-outer">
+                      <h2 class="article-title entry-title">Infomation</h2>
+                    </div>
+
+                  </div>
+                  <!-- articleHeader End -->
+                  <div id="share">
+                    <a id="tweetbtn" href="https://twitter.com/share" class="twitter-share-button" data-via="LuckyBanchoFF14" data-lang="en" data-size="large" data-hashtags="FFXIV">Tweet</a>
+                    <script>
+                      setTimeout(
+                        function() {
+                          ! function(d, s, id) {
+                            var js, fjs = d
+                              .getElementsByTagName(s)[0],
+                              p = /^http:/
+                              .test(d.location) ? 'http' : 'https';
+                            if (!d
+                              .getElementById(id)) {
+                              js = d
+                                .createElement(s);
+                              js.id = id;
+                              js.src = p + '://platform.twitter.com/widgets.js';
+                              fjs.parentNode
+                                .insertBefore(
+                                  js,
+                                  fjs);
+                            }
+                          }(document, 'script',
+                            'twitter-wjs');
+                        }, 1000);
+                    </script>
+                  </div>
+
+                  <div class="article-body entry-content">
+
+                    <div id="survey-info" class="article-body-inner">
+                      <p>
+                        This survey is based on the character data of <a href="http://jp.finalfantasyxiv.com/lodestone/" target="_blank">FinalFantasy XIV offical player's site
+													"The Lodestone".</a>
+                      </p>
+                      <p>Data is carried out based on the data from August 25, 2013 to September 30, 2017.</p>
+                      <p>I intended for the character who was higher than level 36,that is get from Losestone charactor search page, in this survey.And narrowed character that change hp,minion count,mount count from last survey to regard as active character.and
+                        exclude characters that has no mount as bot.</p>
+                      <p>If you want to other world's report,Please change right top select menu "WORLD SELECT".</p>
+
+                      <div id="lslink"></div>
+                      <p id="sig">
+                        <a href="http://jp.finalfantasyxiv.com/lodestone/character/3566066/" target="_blank">Lucky Bancho&lt;Lodestone&gt;</a> <a href="https://twitter.com/LuckyBanchoFF14" target="blank">@LuckyBanchoFF14&lt;Twitter&gt;</a>
+                      </p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- サマリー Start -->
+            <div class="article-outer hentry">
+              <div class="article-outer-2">
+                <div class="article-outer-3">
+
+                  <div class="article-header">
+                    <div class="article-title-outer">
+                      <h2 class="article-title entry-title">World Summary</h2>
+                    </div>
+
+                  </div>
+                  <!-- articleHeader End -->
+
+                  <div class="article-body entry-content">
+                    <div class="article-body-inner">
+                      <div style="float: left; width: 300px;">
+                        <p class="subTitle">World Infomation</p>
+                        <table id="summary_table" class="survey">
+                          <tr>
+                            <th class="t_top">World Name</th>
+                            <td class="t_top" id="summary_worldname"></td>
+                          </tr>
+                          <tr>
+                            <th>Region</th>
+                            <td class="odd" id="summary_region"></td>
+                          </tr>
+                          <tr>
+                            <th>Data Center</th>
+                            <td id="summary_dc"></td>
+                          </tr>
+                          <tr>
+                            <th>World Created</th>
+                            <td id="summary_create" class="odd" ></td>
+                          </tr>
+                          <tr>
+                            <th>Sample character size</th>
+                            <td id="summary_sampling"></td>
+                          </tr>
+                          <tr>
+                            <th>Rank of Sample character size</th>
+                            <td class="odd">All world： <a onclick="showRanking('world_rank','value','desc',' Sample character size','sample');"><span
+																id="summary_worldrank"></span></a>
+                              <br /> Area： <a onclick="showRanking('group_rank','value','desc',' Sample character size','sample');"><span
+																id="summary_grouprank"></span></a>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <th>Population of Expansion package</th>
+                            <td id="summary_gcbelong"></td>
+                          </tr>
+                          <tr>
+                            <th>Rank of Expansion Package installed</th>
+                            <td class="odd">All world： <a onclick="showRanking('world_rank','value','desc','Population of Expansion package','expansion');"><span
+																id="gc_worldrank"></span></a>
+                              <br /> Area： <a onclick="showRanking('group_rank','value','desc','Population of Expansion package','expansion');"><span
+																id="gc_grouprank"></span></a>
+                            </td>
+
+                          </tr>
+                        </table>
+                        <div style="width:400px;padding-left:20px;">※Population of Expansion package is Any Battle Classes greater than level 60 or Samurai or Red Mage greater than or equal to level 50.</div>
+                        <div id="langPanel_wrap">
+                          <div id="langPanel_summary">
+                            <p id="langPanel_Title" class="subTitle">Population Composition of Language</p>
+                            <table id="langTable" class="survey">
+                              <tr>
+                                <th class="t_top">Japanese</th>
+                                <td id="langRate_ja" class="t_top">000</td>
+                              </tr>
+                              <tr>
+                                <th>English</th>
+                                <td id="langRate_en" class="odd">000</td>
+                              </tr>
+                              <tr>
+                                <th>German</th>
+                                <td id="langRate_de">000</td>
+                              </tr>
+                              <tr>
+                                <th>French</th>
+                                <td id="langRate_fr" class="odd">000</td>
+                              </tr>
+                            </table>
+                          </div>
+                          <div id="langPanel"></div>
+                        </div>
+
+                        <div style="clear: both;"></div>
+
+
+                        <div id="ccPanel_wrap">
+                          <div id="ccPanel_summary">
+                            <p id="ccPanel_Title" class="subTitle">When they plaing start?</p>
+                            <table id="ccTable" class="survey">
+                              <tr>
+                                <th class="t_top" style="width:100px">Created</th>
+                                <th class="t_top">Charactors</th>
+                                <th class="remark t_top">Remark</th>
+                              </tr>
+                              <tr>
+                                <td>until 8/25</td>
+                                <td id="cc_20130825">000</td>
+                                <td class="remark">8/17-19:Open beta test start.
+                                  <br>8/24:Early Access start.
+                                </td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 8/31</td>
+                                <td id="cc_20130831">000</td>
+                                <td class="remark">8/27:Official service start</td>
+                              </tr>
+                              <tr>
+                                <td>until 9/7</td>
+                                <td id="cc_20130907">000</td>
+                                <td class="remark">9/4:Administration reinforced a server
+                                </td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 9/14</td>
+                                <td id="cc_20130914">000</td>
+                                <td class="remark">9/12:An automatic logout function was implemented</td>
+                              </tr>
+                              <tr>
+                                <td>until 9/21</td>
+                                <td id="cc_20130921">000</td>
+                                <td class="remark">9/18:Package and Download sale restarted
+                                </td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 9/28</td>
+                                <td id="cc_20130928">000</td>
+                                <td class="remark"></td>
+                              </tr>
+                              <tr>
+                                <td>until 10/12</td>
+                                <td id="cc_20131012">000</td>
+                                <td class="remark"></td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 10/26</td>
+                                <td id="cc_20131026">000</td>
+                                <td class="remark">10/15～22:World Transfer Service preopen.
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>until 11/18</td>
+                                <td id="cc_20131118">000</td>
+                                <td class="remark"></td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 12/07</td>
+                                <td id="cc_20131207">000</td>
+                                <td class="remark"></td>
+                              </tr>
+                              <tr>
+                                <td>until 12/21</td>
+                                <td id="cc_20131221">000</td>
+                                <td class="remark">12/15: Patch 2.1 released</td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 2014/1/12</td>
+                                <td id="cc_20140112">000</td>
+                                <td class="remark"></td>
+                              </tr>
+                              <tr>
+                                <td>until 1/25</td>
+                                <td id="cc_20140125">000</td>
+                                <td class="remark">1/11～1/13:Free Login Weekend</td>
+                              </tr>
+                              <tr>
+                                <td>until 2/15</td>
+                                <td id="cc_20140215">000</td>
+                                <td class="remark"></td>
+                              </tr>
+                              <tr>
+                                <td>until 3/8</td>
+                                <td id="cc_20140308">000</td>
+                                <td class="remark">3/1:World Transfer from LEGACY unlock.
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>until 4/6</td>
+                                <td id="cc_20140406">000</td>
+                                <td class="remark">3/26:Patch 2.2 released
+                                  <br />4/4～4/7:PS4 open beta test
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>until 4/21</td>
+                                <td id="cc_20140421">000</td>
+                                <td class="remark">4/14:PS4 version releaced</td>
+                              </tr>
+                              <tr>
+                                <td>until 5/07</td>
+                                <td id="cc_20140507">000</td>
+                                <td class="remark">4/24:Patch 2.25 released</td>
+                              </tr>
+                              <tr>
+                                <td>until 7/04</td>
+                                <td id="cc_20140704">000</td>
+                                <td class="remark">6/05:Patch 2.28 released</td>
+                              </tr>
+                              <tr>
+                                <td>until 6/02</td>
+                                <td id="cc_20140802">000</td>
+                                <td class="remark">7/8:Patch 2.3 released
+                                  <br />7/31:Freetryal start.
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>until 8/31</td>
+                                <td id="cc_20140831">000</td>
+                                <td class="remark">8/19:Patch 2.35 released
+                                  <br />8/27:1st anniversary of ARR.
+                                </td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 10/7</td>
+                                <td id="cc_20141007">000</td>
+                                <td class="remark">9/16:Patch2.38 released</td>
+                              </tr>
+                              <tr>
+                                <td>until 11/12</td>
+                                <td id="cc_20141112">000</td>
+                                <td class="remark">10/24:Patch2.4 released</td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 12/10</td>
+                                <td id="cc_20141210">000</td>
+                                <td class="remark">12/9:Patch2.45 released</td>
+                              </tr>
+                              <tr>
+                                <td>until 2015/2/4</td>
+                                <td id="cc_20150204">000</td>
+                                <td class="remark">1/20:Patch2.5 released</td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 4/5</td>
+                                <td id="cc_20150405">000</td>
+                                <td class="remark">3/31:Patch2.55 released</td>
+                              </tr>
+                              <tr>
+                                <td>until 7/27</td>
+                                <td id="cc_20150727">000</td>
+                                <td class="remark">6/19:Patch3.0 Early access
+                                  <br/>6/23:Heavensward released</td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 12/18</td>
+                                <td id="cc_20151218">000</td>
+                                <td class="remark">11/9:Patch3.1 released</td>
+                              </tr>
+                              <tr>
+                                <td>until 2016/3/31</td>
+                                <td id="cc_20160331">000</td>
+                                <td class="remark">2/23:Patch3.2 released</td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 7/21</td>
+                                <td id="cc_20160721">000</td>
+                                <td class="remark">6/6:Patch3.3 released</td>
+                              </tr>
+                              <tr>
+                                <td>until 11/4</td>
+                                <td id="cc_20161104">000</td>
+                                <td class="remark">9/26:Patch3.4 released</td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 2017/3/1</td>
+                                <td id="cc_20170301">000</td>
+                                <td class="remark">1/16:Patch3.5 Part.1 released</td>
+                              </tr>
+                              <tr>
+                                <td>until 5/29</td>
+                                <td id="cc_20170529">000</td>
+                                <td class="remark">3/28:Patch3.56 released</td>
+                              </tr>
+                              <tr class="odd">
+                                <td>until 7/7</td>
+                                <td id="cc_20170707">000</td>
+                                <td class="remark">6/16:Patch34.0 Early access
+                                  <br/>6/20:Stormblood released</td>
+                              </tr>
+                              <tr>
+                                <td>until 9/25</td>
+                                <td id="cc_20170925">000</td>
+                                <td class="remark">7/18:Patch4.05 released</td>
+                              </tr>
+                            </table>
+                          </div>
+                          <div id="ccPanel"></div>
+                        </div>
+ 
+                        <div style="clear: both;"></div>
+
+                        <div id="ccTrendBox">
+                          <p id="" class="subTitle">Population Composition of starting date</p>
+                          <div id="ccTrendpWrap">
+                            <div id="ccTrendPanel"></div>
+                          </div>
+                        </div>
+
+
+						<div id="ccVariationBox">
+                          <p id="" class="subTitle">Increase and decrease of Population from Previous survey</p>
+                          <div id="ccVariationWrap">
+                            <div id="ccVariationPanel"></div>
+	                        <div>
+	                          <ul id="Variation-label">
+	                            <li>Pre</li>
+	                            <li>Del</li>
+	                            <li>Pause</li>
+	                            <li>W-Out</li>
+	                            <li>W-In</li>
+	                            <li>Return</li>
+	                            <li>New</li>
+	                            <li>Cur</li>
+	                          </ul>
+	                        </div>                          
+                          </div>
+                          
+                          
+                          <div class="hiddenBlockArea" id="Variation-ditail">
+	                          <div class="hiddenBlockAreaInner">
+	                            <div class="hiddenBlockAreaHeader">
+
+	                              <a style="display: block;" href="javascript:toggleBlock('.variation_class');" class="showHiddenBlock block chara_class" title="クリックして表示">クリックして表示</a>
+	                              <a style="display: none;" href="javascript:toggleBlock('.variation_class');" class="hideHiddenBlock hide chara_class" title="クリックして隠す">クリックして隠す</a>
+	                            </div>
+	                            <div class="hiddenBlockAreaBody hide variation_class">
+	                              <table class="survey">
+	                                <thead>
+	                                  <tr>
+	                                    <th class="t_top" style="width:100px">Label</th>
+	                                    <th class="t_top" style="width:100px">Count</th>
+	                                    <th class="t_top" style="width:100px">Amount</th>
+	                                    <th class="t_top">remark</th>
+	                                  </tr>
+	                                </thead>
+	                                <tbody>
+	                                  <tr class="odd">
+	                                  	<td>Pre</td>
+	                                  	<td id="variation_pre_active"></td>
+	                                  	<td id="cumulative_pre_active">></td>
+	                                  	<td>Number of active characters in previous survey.</td>
+	                                  </tr>
+	                                  <tr class="">
+	                                  	<td>Del</td>
+	                                  	<td id="variation_delete"></td>
+	                                  	<td id="cumulative_delete">></td>
+	                                  	<td>Number of Deleted characters.</td>
+	                                  </tr>
+	                                  <tr class="odd">
+	                                  	<td>Pause</td>
+	                                  	<td id="variation_pause"></td>
+	                                  	<td id="cumulative_pause">></td>
+	                                  	<td>Number of paused characters.</td>
+	                                  </tr>
+	                                  <tr class="">
+	                                  	<td>W-Out</td>
+	                                  	<td id="variation_world_trans_out"></td>
+	                                  	<td id="cumulative_world_trans_out">></td>
+	                                  	<td>Number of characters relocated to other world.</td>
+	                                  </tr>
+	                                  <tr class="odd">
+	                                  	<td>W-in</td>
+	                                  	<td id="variation_world_trans_in"></td>
+	                                  	<td id="cumulative_world_trans_in">></td>
+	                                  	<td>Number of characters transferred from other world.</td>
+	                                  </tr>
+	                                  <tr class="">
+	                                  	<td>Return</td>
+	                                  	<td id="variation_returner"></td>
+	                                  	<td id="cumulative_returner">></td>
+	                                  	<td>Number of characters to be active this survey.</td>
+	                                  </tr>
+	                                  <tr class="odd">
+	                                  	<td>New</td>
+	                                  	<td id="variation_new_player"></td>
+	                                  	<td id="cumulative_new_player">></td>
+	                                  	<td>Number of new characters in this survey.</td>
+	                                  </tr>
+	                                  <tr class="">
+	                                  	<td>Cur</td>
+	                                  	<td id="variation_cur_active"></td>
+	                                  	<td id="cumulative_cur_active">></td>
+	                                  	<td>Number of active characters in this survey.</td>
+	                                  </tr>
+	                                </tbody>
+	                              </table>
+	                            </div>
+	                          </div>
+	                        </div>
+
+                        </div>
+
+
+
+                      </div>
+                      <div style="float: right; padding-right: 50px;">
+                        <img id="world_image">
+                      </div>
+
+                    </div>
+
+
+                  </div>
+                  <!-- articleBody End -->
+
+                  <div class="article-header">
+                    <div class="article-title-outer">
+                      <h2 class="article-title entry-title">Character making</h2>
+                    </div>
+
+                  </div>
+                  <!-- articleHeader End -->
+
+                  <div class="article-body entry-content">
+                    <div class="article-body-inner">
+                      <div id="birthBlock">
+                        <p id="" class="subTitle">Birth Month</p>
+
+                        <div id="birthPanel" style="height: 250px;"></div>
+                        <div>
+                          <ul id="birth-label">
+                            <li>1AM<img src="http://luckybancho.ldblog.jp/wsurvey/images/god/halone.png"></li>
+                            <li>1UM<img src="http://luckybancho.ldblog.jp/wsurvey/images/god/menphina.png"></li>
+                            <li>2AM<img src="http://luckybancho.ldblog.jp/wsurvey/images/god/thaliak.png"></li>
+                            <li>2UM<img src="http://luckybancho.ldblog.jp/wsurvey/images/god/nymeia.png"></li>
+                            <li>3AM<img src="http://luckybancho.ldblog.jp/wsurvey/images/god/llymlaen.png"></li>
+                            <li>3UM<img src="http://luckybancho.ldblog.jp/wsurvey/images/god/oschon.png"></li>
+                            <li>4AM<img src="http://luckybancho.ldblog.jp/wsurvey/images/god/byregot.png"></li>
+                            <li>4UM<img src="http://luckybancho.ldblog.jp/wsurvey/images/god/rhalgr.png"></li>
+                            <li>5AM<img src="http://luckybancho.ldblog.jp/wsurvey/images/god/azeyma.png"></li>
+                            <li>5UM<img src="http://luckybancho.ldblog.jp/wsurvey/images/god/naldthal.png"></li>
+                            <li>6AM<img src="http://luckybancho.ldblog.jp/wsurvey/images/god/nophica.png"></li>
+                            <li>6UM<img src="http://luckybancho.ldblog.jp/wsurvey/images/god/althyk.png"></li>
+                          </ul>
+                        </div>
+                        <span style=""></span>
+                      </div>
+
+                      <div id="godBlock">
+                        <p id="" class="subTitle">Guardian</p>
+                        <div id="godWrap">
+                          <table id="godTable" class="survey">
+                            <tr>
+                              <th class="t_top">Guardian</th>
+                              <th class="t_top">rate</th>
+                              <th class="t_top">Guardian</th>
+                              <th class="t_top">rate</th>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/god/halone.png">
+                                <p>Halone</p>
+                              </td>
+                              <td class="value"><span id="g_0">000</span></td>
+
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/god/menphina.png">
+                                <p>Menphina</p>
+                              </td>
+                              <td class="value"><span id="g_1">000</span></td>
+                            </tr>
+                            <tr>
+                              <td class="odd"><img src="http://luckybancho.ldblog.jp/wsurvey/images/god/thaliak.png">
+                                <p>Thaliak</p>
+                              </td>
+                              <td class="odd value"><span id="g_2">000</span></td>
+
+                              <td class="odd"><img src="http://luckybancho.ldblog.jp/wsurvey/images/god/nymeia.png">
+                                <p>Nymeia</p>
+                              </td>
+                              <td class="odd value"><span id="g_3">000</span></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/god/llymlaen.png">
+                                <p>Llymlaen</p>
+                              </td>
+                              <td class="value"><span id="g_4">000</span></td>
+
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/god/oschon.png">
+                                <p>Oschon</p>
+                              </td>
+                              <td class="value"><span id="g_5">000</span></td>
+                            </tr>
+                            <tr>
+                              <td class="odd"><img src="http://luckybancho.ldblog.jp/wsurvey/images/god/byregot.png">
+                                <p>Byregot</p>
+                              </td>
+                              <td class="odd value" class="value"><span id="g_6">000</span></td>
+
+                              <td class="odd"><img src="http://luckybancho.ldblog.jp/wsurvey/images/god/rhalgr.png">
+                                <p>Rhalgr</p>
+                              </td>
+                              <td class="odd value" class="value"><span id="g_7">000</span></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/god/azeyma.png">
+                                <p>Azeyma</p>
+                              </td>
+                              <td class="value"><span id="g_8">000</span></td>
+
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/god/naldthal.png">
+                                <p>Nald'thal</p>
+                              </td>
+                              <td class="value"><span id="g_9">000</span></td>
+                            </tr>
+                            <tr>
+                              <td class="odd"><img src="http://luckybancho.ldblog.jp/wsurvey/images/god/nophica.png">
+                                <p>Nophica</p>
+                              </td>
+                              <td class="odd value" class="value"><span id="g_10">000</span></td>
+
+                              <td class="odd"><img src="http://luckybancho.ldblog.jp/wsurvey/images/god/althyk.png">
+                                <p>Althyk</p>
+                              </td>
+                              <td class="odd value" class="value"><span id="g_11">000</span></td>
+                            </tr>
+                          </table>
+                          <div id="godPanel"></div>
+                        </div>
+                      </div>
+                      <span style="clear: both;"></span>
+                      <div id="cityBox">
+                        <p id="" class="subTitle">City-state</p>
+                        <div id="cityWrap">
+                          <table id="cityTable" class="survey">
+                            <tr>
+                              <th class="t_top" style="width: 140px;">City-state</th>
+                              <th class="t_top">rate</th>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/gc/limsalominsa.png">
+                                <p>Limsa Lominsa</p>
+                              </td>
+                              <td class="value"><span id="c_0">000</span></td>
+
+                            </tr>
+                            <tr>
+                              <td class="odd"><img src="http://luckybancho.ldblog.jp/wsurvey/images/gc/gridania.png">
+                                <p>Gridania</p>
+                              </td>
+                              <td class="odd value"><span id="c_1">000</span></td>
+
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/gc/uldah.png">
+                                <p>ul'dah</p>
+                              </td>
+                              <td class="value"><span id="c_2">000</span></td>
+
+                            </tr>
+                          </table>
+                          <div id="cityPanel"></div>
+                        </div>
+                      </div>
+                      <span style="clear: both;"></span>
+
+                      <div id="nationBox">
+                        <p id="" class="subTitle">Race</p>
+                        <div id="natioPanel"></div>
+
+                        <div id="nation-label">
+                          <div id="nation-h">
+                            <p>Hyur</p>
+                            <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/h1.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/h2.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/h3.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/h4.png">
+                          </div>
+                          <div id="nation-e">
+                            <p>Elezen</p>
+                            <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/e1.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/e2.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/e3.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/e4.png">
+                          </div>
+                          <div id="nation-l">
+                            <p>Lalafell</p>
+                            <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/l1.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/l2.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/l3.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/l4.png">
+                          </div>
+                          <div id="nation-m">
+                            <p>Miqo'te</p>
+                            <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/m1.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/m2.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/m3.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/m4.png">
+                          </div>
+                          <div id="nation-r">
+                            <p>Roegadyn</p>
+                            <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/r1.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/r2.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/r3.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/r4.png">
+                          </div>
+                          <div id="nation-a">
+                            <p>Au Ra</p>
+                            <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/a1.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/a2.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/a3.png"> <img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/a4.png">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="hiddenBlockArea" id="nation-ditail">
+                        <div class="hiddenBlockAreaInner">
+                          <div class="hiddenBlockAreaHeader">
+
+                            <a style="display: block;" href="javascript:toggleBlock('.nation');" class="showHiddenBlock block nation" title="クリックして表示">クリックして表示</a>
+                            <a style="display: none;" href="javascript:toggleBlock('.nation');" class="hideHiddenBlock hide nation" title="クリックして隠す">クリックして隠す</a>
+                          </div>
+                          <div class="hiddenBlockAreaBody hide nation">
+                            <table class="survey">
+                              <tr>
+                                <th class="t_top">Face</th>
+                                <th class="t_top">Race</th>
+                                <th class="t_top">Clan</th>
+                                <th class="t_top">Gender</th>
+                                <th class="t_top">Population</th>
+                                <th class="t_top">rate</th>
+                                <th class="t_top">Race total</th>
+                                <th class="t_top">Gender total</th>
+                                <th class="t_top">World Ranking</th>
+                                <th class="t_top">Area Ranking</th>
+                              </tr>
+                              <tr>
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/h1.png"></td>
+                                <td>Hyur</td>
+                                <td>Midland Hyur</td>
+                                <td>Male</td>
+                                <td><span id="n_h1">000</span></td>
+                                <td><span id="nr_h1">000</span></td>
+                                <td id="t_hm" rowspan=2>000</td>
+                                <td id="t_m" rowspan=12>000</td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Midland Hyur','nation','ヒューラン','ミッドランダー','♂');"><span
+																		id="nw_h1">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Midland Hyur','nation','ヒューラン','ミッドランダー','♂');"><span
+																		id="ng_h1">000</span></a></td>
+                              </tr>
+                              <tr class="odd">
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/h2.png"></td>
+                                <td>Hyur</td>
+                                <td>Highland Hyur</td>
+                                <td>Male</td>
+                                <td><span id="n_h2">000</span></td>
+                                <td><span id="nr_h2">000</span></td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Highland Hyur','nation','ヒューラン','ハイランダー','♂');"><span
+																		id="nw_h2">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Highland Hyur','nation','ヒューラン','ハイランダー','♂');"><span
+																		id="ng_h2">000</span></a></td>
+                              </tr>
+                              <tr>
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/e1.png"></td>
+                                <td>Elezen</td>
+                                <td>Wildwood</td>
+                                <td>Male</td>
+                                <td><span id="n_e1">000</span></td>
+                                <td><span id="nr_e1">000</span></td>
+                                <td id="t_em" class="odd" rowspan=2>000</td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Wildwood','nation','エレゼン','フォレスター','♂');"><span
+																		id="nw_e1">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Wildwood','nation','エレゼン','フォレスター','♂');"><span
+																		id="ng_e1">000</span></a></td>
+                              </tr>
+                              <tr class="odd">
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/e2.png"></td>
+                                <td>Elezen</td>
+                                <td>Duskwight</td>
+                                <td>Male</td>
+                                <td><span id="n_e2">000</span></td>
+                                <td><span id="nr_e2">000</span></td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Duskwight','nation','エレゼン','シェーダー','♂');"><span
+																		id="nw_e2">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Duskwight','nation','エレゼン','シェーダー','♂');"><span
+																		id="ng_e2">000</span></a></td>
+                              </tr>
+                              <tr>
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/l1.png"></td>
+                                <td>Lalafell</td>
+                                <td>Plainsfolk</td>
+                                <td>Male</td>
+                                <td><span id="n_l1">000</span></td>
+                                <td><span id="nr_l1">000</span></td>
+                                <td id="t_lm" rowspan=2>000</td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Plainsfolk','nation','ララフェル','プレーンフォーク','♂');"><span
+																		id="nw_l1">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Plainsfolk','nation','ララフェル','プレーンフォーク','♂');"><span
+																		id="ng_l1">000</span></a></td>
+                              </tr>
+                              <tr class="odd">
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/l2.png"></td>
+                                <td>Lalafell</td>
+                                <td>Dunesfolk</td>
+                                <td>Male</td>
+                                <td><span id="n_l2">000</span></td>
+                                <td><span id="nr_l2">000</span></td>
+
+                                <td><a onclick="showRanking('world_rank','rate','desc','Dunesfolk','nation','ララフェル','デューンフォーク','♂');"><span
+																		id="nw_l2">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Dunesfolk','nation','ララフェル','デューンフォーク','♂');"><span
+																		id="ng_l2">000</span></a></td>
+                              </tr>
+                              <tr>
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/m1.png"></td>
+                                <td>Miqo'te</td>
+                                <td>Seekers of the sun</td>
+                                <td>Male</td>
+                                <td><span id="n_m1">000</span></td>
+                                <td><span id="nr_m1">000</span></td>
+                                <td id="t_mm" class="odd" rowspan=2>000</td>
+
+                                <td><a onclick="showRanking('world_rank','rate','desc','Seekers of the sun','nation','ミコッテ','サンシーカー','♂');"><span
+																		id="nw_m1">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Seekers of the sun','nation','ミコッテ','サンシーカー','♂');"><span
+																		id="ng_m1">000</span></a></td>
+                              </tr>
+                              <tr class="odd">
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/m2.png"></td>
+                                <td>Miqo'te</td>
+                                <td>Keepers of the moon</td>
+                                <td>Male</td>
+                                <td><span id="n_m2">000</span></td>
+                                <td><span id="nr_m2">000</span></td>
+
+                                <td><a onclick="showRanking('world_rank','rate','desc','Keepers of the moon','nation','ミコッテ','ムーンキーパー','♂');"><span
+																		id="nw_m2">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Keepers of the moon','nation','ミコッテ','ムーンキーパー','♂');"><span
+																		id="ng_m2">000</span></a></td>
+                              </tr>
+                              <tr>
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/r1.png"></td>
+                                <td>Roegadyn</td>
+                                <td>Sea wolves</td>
+                                <td>Male</td>
+                                <td><span id="n_r1">000</span></td>
+                                <td><span id="nr_r1">000</span></td>
+                                <td id="t_rm" rowspan=2>000</td>
+
+                                <td><a onclick="showRanking('world_rank','rate','desc','Sea wolves','nation','ルガディン','ゼーヴォルフ','♂');"><span
+																		id="nw_r1">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Sea wolves','nation','ルガディン','ゼーヴォルフ','♂');"><span
+																		id="ng_r1">000</span></a></td>
+                              </tr>
+                              <tr class="odd">
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/r2.png"></td>
+                                <td>Roegadyn</td>
+                                <td>Hellsguard</td>
+                                <td>Male</td>
+                                <td><span id="n_r2">000</span></td>
+                                <td><span id="nr_r2">000</span></td>
+
+                                <td><a onclick="showRanking('world_rank','rate','desc','Hellsguard','nation','ルガディン','ローエンガルデ','♂');"><span
+																		id="nw_r2">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Hellsguard','nation','ルガディン','ローエンガルデ','♂');"><span
+																		id="ng_r2">000</span></a></td>
+                              </tr>
+                              <tr>
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/a1.png"></td>
+                                <td>Au Ra</td>
+                                <td>Au Ra Raen</td>
+                                <td>Male</td>
+                                <td><span id="n_a1">000</span></td>
+                                <td><span id="nr_a1">000</span></td>
+                                <td id="t_am" class="odd" rowspan=2>000</td>
+
+                                <td><a onclick="showRanking('world_rank','rate','desc','Au Ra Raen','nation','アウラ','アウラ・レン','♂');"><span
+																		id="nw_a1">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Au Ra Raen','nation','アウラ','アウラ・レン','♂');"><span
+																		id="ng_a1">000</span></a></td>
+                              </tr>
+                              <tr class="odd">
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/a2.png"></td>
+                                <td>Au Ra</td>
+                                <td>Au Ra Xaela</td>
+                                <td>Male</td>
+                                <td><span id="n_a2">000</span></td>
+                                <td><span id="nr_a2">000</span></td>
+
+                                <td><a onclick="showRanking('world_rank','rate','desc','Au Ra Xaela','nation','アウラ','アウラ・ゼラ','♂');"><span
+																		id="nw_a2">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Au Ra Xaela','nation','アウラ','アウラ・ゼラ','♂');"><span
+																		id="ng_a2">000</span></a></td>
+                              </tr>
+                              <tr>
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/h3.png"></td>
+                                <td>Hyur</td>
+                                <td>Midland Hyur</td>
+                                <td>Female</td>
+                                <td><span id="n_h3">000</span></td>
+                                <td><span id="nr_h3">000</span></td>
+                                <td id="t_hf" class="odd" rowspan=2>000</td>
+                                <td id="t_f" class="odd" rowspan=12>000</td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Midland Hyur','nation','ヒューラン','ミッドランダー','♀');"><span
+																		id="nw_h3">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Midland Hyur','nation','ヒューラン','ミッドランダー','♀');"><span
+																		id="ng_h3">000</span></a></td>
+                              </tr>
+                              <tr class="odd">
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/h4.png"></td>
+                                <td>Hyur</td>
+                                <td>Highland Hyur</td>
+                                <td>Female</td>
+                                <td><span id="n_h4">000</span></td>
+                                <td><span id="nr_h4">000</span></td>
+
+                                <td><a onclick="showRanking('world_rank','rate','desc','Highland Hyur','nation','ヒューラン','ハンダンラー','♀');"><span
+																		id="nw_h4">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Highland Hyur','nation','ヒューラン','ハンダンラー','♀');"><span
+																		id="ng_h4">000</span></a></td>
+                              </tr>
+                              <tr>
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/e3.png"></td>
+                                <td>Elezen</td>
+                                <td>Wildwood</td>
+                                <td>Female</td>
+                                <td><span id="n_e3">000</span></td>
+                                <td><span id="nr_e3">000</span></td>
+                                <td id="t_ef" rowspan=2>000</td>
+
+                                <td><a onclick="showRanking('world_rank','rate','desc','Wildwood','nation','エレゼン','フォレスター','♀');"><span
+																		id="nw_e3">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Wildwood','nation','エレゼン','フォレスター','♀');"><span
+																		id="ng_e3">000</span></a></td>
+                              </tr>
+                              <tr class="odd">
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/e4.png"></td>
+                                <td>Elezen</td>
+                                <td>Duskwight</td>
+                                <td>Female</td>
+                                <td><span id="n_e4">000</span></td>
+                                <td><span id="nr_e4">000</span></td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Duskwight','nation','エレゼン','シェーダー','♀');"><span
+																		id="nw_e4">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Duskwight','nation','エレゼン','シェーダー','♀');"><span
+																		id="ng_e4">000</span></a></td>
+                              </tr>
+                              <tr>
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/l3.png"></td>
+                                <td>Lalafell</td>
+                                <td>Plainsfolk</td>
+                                <td>Female</td>
+                                <td><span id="n_l3">000</span></td>
+                                <td><span id="nr_l3">000</span></td>
+                                <td id="t_lf" class="odd" rowspan=2>000</td>
+
+                                <td><a onclick="showRanking('world_rank','rate','desc','Plainsfolk','nation','ララフェル','プレーンフォーク','♀');"><span
+																		id="nw_l3">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Plainsfolk','nation','ララフェル','プレーンフォーク','♀');"><span
+																		id="ng_l3">000</span></a></td>
+                              </tr>
+                              <tr class="odd">
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/l4.png"></td>
+                                <td>Lalafell</td>
+                                <td>Dunesfolk</td>
+                                <td>Female</td>
+                                <td><span id="n_l4">000</span></td>
+                                <td><span id="nr_l4">000</span></td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Dunesfolk','nation','ララフェル','デューンフォーク','♀');"><span
+																		id="nw_l4">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Dunesfolk','nation','ララフェル','デューンフォーク','♀');"><span
+																		id="ng_l4">000</span></a></td>
+                              </tr>
+                              <tr>
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/m3.png"></td>
+                                <td>Miqo'te</td>
+                                <td>Seekers of the sun</td>
+                                <td>Female</td>
+                                <td><span id="n_m3">000</span></td>
+                                <td><span id="nr_m3">000</span></td>
+                                <td id="t_mf" rowspan=2>000</td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Seekers of the sun','nation','ミコッテ','サンシーカー','♀');"><span
+																		id="nw_m3">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Seekers of the sun','nation','ミコッテ','サンシーカー','♀');"><span
+																		id="ng_m3">000</span></a></td>
+                              </tr>
+                              <tr class="odd">
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/m4.png"></td>
+                                <td>Miqo'te</td>
+                                <td>Keepers of the moon</td>
+                                <td>Female</td>
+                                <td><span id="n_m4">000</span></td>
+                                <td><span id="nr_m4">000</span></td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Keepers of the moon','nation','ミコッテ','ムーンキーパー','♀');"><span
+																		id="nw_m4">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Keepers of the moon','nation','ミコッテ','ムーンキーパー','♀');"><span
+																		id="ng_m4">000</span></a></td>
+                              </tr>
+                              <tr>
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/r3.png"></td>
+                                <td>Roegadyn</td>
+                                <td>Sea wolves</td>
+                                <td>Female</td>
+                                <td><span id="n_r3">000</span></td>
+                                <td><span id="nr_r3">000</span></td>
+                                <td id="t_rf" class="odd" rowspan=2>000</td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Sea wolves','nation','ルガディン','ゼーヴォルフ','♀');"><span
+																		id="nw_r3">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Sea wolves','nation','ルガディン','ゼーヴォルフ','♀');"><span
+																		id="ng_r3">000</span></a></td>
+                              </tr>
+                              <tr class="odd">
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/r4.png"></td>
+                                <td>Roegadyn</td>
+                                <td>Hellsguard</td>
+                                <td>Female</td>
+                                <td><span id="n_r4">000</span></td>
+                                <td><span id="nr_r4">000</span></td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Hellsguard','nation','ルガディン','ローエンガルデ','♀');"><span
+																		id="nw_r4">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Hellsguard','nation','ルガディン','ローエンガルデ','♀');"><span
+																		id="ng_r4">000</span></a></td>
+                              </tr>
+                              <tr>
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/a3.png"></td>
+                                <td>Au Ra</td>
+                                <td>Au Ra Raen</td>
+                                <td>Female</td>
+                                <td><span id="n_a3">000</span></td>
+                                <td><span id="nr_a3">000</span></td>
+                                <td id="t_af" class="odd" rowspan=2>000</td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Au Ra Raen','nation','アウラ','アウラ・レン','♀');"><span
+																		id="nw_a3">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Au Ra Raen','nation','アウラ','アウラ・レン','♀');"><span
+																		id="ng_a3">000</span></a></td>
+                              </tr>
+                              <tr class="odd">
+                                <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/nation/a4.png"></td>
+                                <td>Au Ra</td>
+                                <td>Au Ra Xaela</td>
+                                <td>Female</td>
+                                <td><span id="n_a4">000</span></td>
+                                <td><span id="nr_a4">000</span></td>
+                                <td><a onclick="showRanking('world_rank','rate','desc','Au Ra Xaela','nation','アウラ','アウラ・ゼラ','♀');"><span
+																		id="nw_a4">000</span></a></td>
+                                <td><a onclick="showRanking('group_rank','rate','desc','Au Ra Xaela','nation','アウラ','アウラ・ゼラ','♀');"><span
+																		id="ng_a4">000</span></a></td>
+                              </tr>
+
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <!-- articleBody End -->
+
+
+                  <div class="article-header">
+                    <div class="article-title-outer">
+                      <h2 class="article-title entry-title">Character Building</h2>
+                    </div>
+
+                  </div>
+                  <!-- articleHeader End -->
+
+                  <div class="article-body entry-content">
+                    <div class="article-body-inner">
+                      <div id="sklBlock">
+                        <p id="" class="subTitle">Character count of Class and Level
+                        </p>
+                        <div id="skill_legend">
+                          <p>
+                            Level 70:<span style="color: #2c3e50">■</span>
+                          </p>
+                          <p>
+                            Level 60 - 69:<span style="color: #1570A6">■</span>
+                          </p>
+                          <p>
+                            Level 50 - 59:<span style="color: #3498db">■</span>
+                          </p>
+                          <p>
+                            Level 40 - 49:<span style="color: #6FC9D8">■</span>
+                          </p>
+                          <p>
+                            Level 30 - 39:<span style="color: #ADD8E6">■</span>
+                          </p>
+                          <p>
+                            Level 20 - 29:<span style="color: #CEEEF8">■</span>
+                          </p>
+                        </div>
+                        <div style="claer: both;"></div>
+                        <div id="levelPanel"></div>
+                        <div>
+                          <ul id="skl-label">
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-prd.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-war.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-mnk.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-drg.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-brd.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-blm.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-whm.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-acn.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-nin.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-crp.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-bsm.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-arm.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-gsm.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-ltw.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-wvr.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-alc.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-cul.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-min.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-btn.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-fsh.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-drk.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-mcn.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-ast.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-sam.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-red.png"></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div style="claer: both;"></div>
+                      <div id="roleBlock">
+                        <p id="" class="subTitle">Rate of Role</p>
+                        <div id="role_legend">
+                          <p>
+                            Tank:<span style="color: #34495e">■</span>
+                          </p>
+                          <p>
+                            DPS:<span style="color: #e74c3c">■</span>
+                          </p>
+                          <p>
+                            Healer:<span style="color: #1abc9c">■</span>
+                          </p>
+                        </div>
+                        <div style="claer: both;"></div>
+                        <div>
+                          <div class="mcPanelWrap">
+                            <p>Level 70</p>
+                            <div id="lv70Panel" class="mcPanel"></div>
+                          </div>                        
+                          <div class="mcPanelWrap">
+                            <p>Level 60</p>
+                            <div id="lv60Panel" class="mcPanel"></div>
+                          </div>
+                          <div class="mcPanelWrap">
+                            <p>Level 50 - 59</p>
+                            <div id="lv50Panel" class="mcPanel"></div>
+                          </div>
+                          <div class="mcPanelWrap">
+
+                            <p>Level 40 - 49</p>
+                            <div id="lv40Panel" class="mcPanel"></div>
+                          </div>
+                          <div class="mcPanelWrap">
+
+                            <p>Level 30 - 39</p>
+                            <div id="lv30Panel" class="mcPanel"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="maxLeveltankBox">
+                        <p id="" class="subTitle">Distribution of Max Tank class Level
+                        </p>
+                        <div id="maxLeveltankWrap">
+                          <div id="maxLeveltankPanel"></div>
+                        </div>
+                      </div>
+                      <div id="maxLeveldpsBox">
+                        <p id="" class="subTitle">Distribution of Max DPS class Level
+                        </p>
+                        <div id="maxLeveldpsWrap">
+                          <div id="maxLeveldpsPanel"></div>
+                        </div>
+                      </div>
+                      <div id="maxLevelhealerBox">
+                        <p id="" class="subTitle">Distribution of Max Healer class Level</p>
+                        <div id="maxLevelhealerWrap">
+                          <div id="maxLevelhealerPanel"></div>
+                        </div>
+                      </div>
+                      <div id="maxLevelbattleBox">
+                        <p id="" class="subTitle">Distribution of Max Battle class Level</p>
+                        <div id="maxLevelbattleWrap">
+                          <div id="maxLevelbattlePanel"></div>
+                        </div>
+                      </div>
+                      <div id="maxLevelcrafterBox">
+                        <p id="" class="subTitle">Distribution of Max Crafter class Level</p>
+                        <div id="maxLevelcrafterWrap">
+                          <div id="maxLevelcrafterPanel"></div>
+                        </div>
+                      </div>
+                      <div id="maxLevelgathererBox">
+                        <p id="" class="subTitle">Distribution of Max Gatherer class Level
+                        </p>
+                        <div id="maxLevelgathererWrap">
+                          <div id="maxLevelgathererPanel"></div>
+                        </div>
+                      </div>
+
+                      <div id="levelCapBox">
+                        <p id="" class="subTitle">Distribution of Level Cap class num
+                        </p>
+                        <div id="levelCapWrap">
+                          <div id="levelCapPanel"></div>
+                        </div>
+                      </div>
+
+						<div id="MeisterBlock">
+                        <p id="" class="subTitle">Distribution of Meister class characters</p>
+
+                        <div id="meisterPanel" style="height: 250px;"></div>
+                        <div>
+                          <ul id="meister-label">
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-crp.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-bsm.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-arm.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-gsm.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-ltw.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-wvr.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-alc.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-cul.png"></li>
+                          </ul>
+                        </div>
+                        <span style=""></span>
+                      </div>
+
+                      <div id="MeisterComboBlock">
+                        <p id="" class="subTitle">Combination of Meister classes</p>
+                        <div class="hiddenBlockArea" id="meister_combo-ditail">
+                          <div class="hiddenBlockAreaInner">
+                            <div class="hiddenBlockAreaHeader">
+
+                              <a style="display: block;" href="javascript:toggleBlock('.meister_combo');" class="showHiddenBlock block meister_combo" title="Click to show">Click to show</a>
+                              <a style="display: none;" href="javascript:toggleBlock('.meister_combo');" class="hideHiddenBlock hide meister_combo" title="Click to hide">Click to hide</a>
+                            </div>
+                            <div class="hiddenBlockAreaBody hide meister_combo">
+                              <table class="survey">
+                                <thead>
+                                  <tr>
+                                    <th class="t_top">Rank</th>
+                                    <th class="t_top" style="width:200px">Combination</th>
+                                    <th class="t_top">Characters</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="MeisterComboTableBody">
+
+                                </tbody>
+
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="charaClassBox">
+                        <p id="" class="subTitle">Combination the class and job in Lodestone Character page.</p>
+                        <div class="sub-title">
+		                    <h3>It is a class and jobs at the time of data acquisition.his main job.
+It is not necessarily the main job.</h3>
+	                    </div>
+                        
+                        <div class="hiddenBlockArea" id="chara_class-ditail">
+                          <div class="hiddenBlockAreaInner">
+                            <div class="hiddenBlockAreaHeader">
+
+                              <a style="display: block;" href="javascript:toggleBlock('.chara_class');" class="showHiddenBlock block chara_class" title="Click to show">Click to show</a>
+                              <a style="display: none;" href="javascript:toggleBlock('.chara_class');" class="hideHiddenBlock hide chara_class" title="Click to hide">Click to hide</a>
+                            </div>
+                            <div class="hiddenBlockAreaBody hide chara_class">
+                              <table class="survey">
+                                <thead>
+                                  <tr>
+                                    <th class="t_top">Jobs</th>
+                                    <th class="t_top">Characters</th>
+                                    <th class="t_top">rate</th>
+                                    <th class="t_top">Level Boost</th>
+                                    <td class="">&nbsp;</td>
+                                    <th class="t_top">Crafter/Gatherer</th>
+                                    <th class="t_top">Characters</th>
+                                    <th class="t_top">rate</th>
+                                    <td class="">&nbsp;</td>
+                                    <th class="t_top">Battle Class</th>
+                                    <th class="t_top">Characters</th>
+                                    <th class="t_top">rate</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="CharaClassTableBody">
+                                  <tr class="odd">
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-prd.png">Paladin</td>
+                                    <td id="chp-prd"></td>
+                                    <td id="chr-prd"></td>
+                                    <td id="bst-prd"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-crp.png">Carpenter</td>
+                                    <td id="chp-crp"></td>
+                                    <td id="chr-crp"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-gla.png">Gladiator</td>
+                                    <td id="chp-gla"></td>
+                                    <td id="chr-gla"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-war.png">Warrior</td>
+                                    <td id="chp-war"></td>
+                                    <td id="chr-war"></td>
+                                    <td id="bst-war"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-bsm.png">Blacksmith</td>
+                                    <td id="chp-bsm"></td>
+                                    <td id="chr-bsm"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-mrd.png">Marauder</td>
+                                    <td id="chp-mrd"></td>
+                                    <td id="chr-mrd"></td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-drk.png">DarkKnight</td>
+                                    <td id="chp-drk"></td>
+                                    <td id="chr-drk"></td>
+                                    <td id="bst-drk"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-arm.png">Armorer</td>
+                                    <td id="chp-arm"></td>
+                                    <td id="chr-arm"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-pgl.png">Pugilist</td>
+                                    <td id="chp-pgl"></td>
+                                    <td id="chr-pgl"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-mnk.png">Monk</td>
+                                    <td id="chp-mnk"></td>
+                                    <td id="chr-mnk"></td>
+                                    <td id="bst-mnk"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-gsm.png">Goldsmith</td>
+                                    <td id="chp-gsm"></td>
+                                    <td id="chr-gsm"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-lnc.png">Lancer</td>
+                                    <td id="chp-lnc"></td>
+                                    <td id="chr-lnc"></td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-drg.png">Dragoon</td>
+                                    <td id="chp-drg"></td>
+                                    <td id="chr-drg"></td>
+                                    <td id="bst-drg"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-ltw.png">Leatherworker</td>
+                                    <td id="chp-ltw"></td>
+                                    <td id="chr-ltw"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-rog.png">Rogue</td>
+                                    <td id="chp-rog"></td>
+                                    <td id="chr-rog"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-nin.png">Ninja</td>
+                                    <td id="chp-nin"></td>
+                                    <td id="chr-nin"></td>
+                                    <td id="bst-nin"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-wvr.png">Weaver</td>
+                                    <td id="chp-wvr"></td>
+                                    <td id="chr-wvr"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-arc.png">Archer</td>
+                                    <td id="chp-arc"></td>
+                                    <td id="chr-arc"></td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-sam.png">Samurai</td>
+                                    <td id="chp-sam"></td>
+                                    <td id="chr-sam"></td>
+                                    <td id="bst-sam"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-alc.png">Alchemist</td>
+                                    <td id="chp-alc"></td>
+                                    <td id="chr-alc"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-cnj.png">Conjurer</td>
+                                    <td id="chp-cnj"></td>
+                                    <td id="chr-cnj"></td>
+                                  </tr>
+                                  <tr>
+                                  	<td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-brd.png">Bard</td>
+                                    <td id="chp-brd"></td>
+                                    <td id="chr-brd"></td>
+                                    <td id="bst-brd"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-cul.png">Culinarian</td>
+                                    <td id="chp-cul"></td>
+                                    <td id="chr-cul"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-thm.png">Thaumaturge</td>
+                                    <td id="chp-thm"></td>
+                                    <td id="chr-thm"></td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-mcn.png">Machinist</td>
+                                    <td id="chp-mcn"></td>
+                                    <td id="chr-mcn"></td>
+                                    <td id="bst-mcn"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-min.png">Miner</td>
+                                    <td id="chp-min"></td>
+                                    <td id="chr-min"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-acn.png">Arcanist</td>
+                                    <td id="chp-acn"></td>
+                                    <td id="chr-acn"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-blm.png">BlackMage</td>
+                                    <td id="chp-blm"></td>
+                                    <td id="chr-blm"></td>
+                                    <td id="bst-blm"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-btn.png">Botanist</td>
+                                    <td id="chp-btn"></td>
+                                    <td id="chr-btn"></td>
+                                    <td class="tbl_blank" colspan="4">&nbsp;</td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-smn.png">Summoner</td>
+                                    <td id="chp-smn"></td>
+                                    <td id="chr-smn"></td>
+                                    <td id="bst-smn"></td>
+                                    <td class="tbl_blank">&nbsp;</td>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-fsh.png">Fisher</td>
+                                    <td id="chp-fsh"></td>
+                                    <td id="chr-fsh"></td>
+                                    <td class="tbl_blank" colspan="4">&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-red.png">RedMage</td>
+                                    <td id="chp-red"></td>
+                                    <td id="chr-red"></td>
+                                    <td id="bst-red"></td>
+                                    <td class="tbl_blank" colspan="8">&nbsp;</td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-whm.png">WhiteMage</td>
+                                    <td id="chp-whm"></td>
+                                    <td id="chr-whm"></td>
+                                    <td id="bst-whm"></td>
+                                    <td class="tbl_blank" colspan="8">&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-sch.png">Scholar</td>
+                                    <td id="chp-sch"></td>
+                                    <td id="chr-sch"></td>
+                                    <td id="bst-sch"></td>
+                                    <td class="tbl_blank" colspan="8">&nbsp;</td>
+                                  </tr>
+                                  <tr class="odd">
+                                    <td class="left"><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-ast.png">Astrologian</td>
+                                    <td id="chp-ast"></td>
+                                    <td id="chr-ast"></td>
+                                    <td id="bst-ast"></td>
+                                    <td class="tbl_blank" colspan="8">&nbsp;</td>
+                                  </tr>
+                                </tbody>
+
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="charaRoleBox">
+                        <p id="" class="subTitle">Rate of Role and Job in the roles(Upper Main hand Item Level <span class='base_il'>000</span> or over)</p>
+        
+                       
+						<div id="jobRoleBlock">
+	                        <div style="claer: both;"></div>
+	                        <div>
+	                          <div class="jobPanelWrap">
+	                            <p>Role</p>
+	                            <div id="jobRolePanel" class="jobPanel"></div>
+	                          </div>
+	                          <div class="jobPanelWrap">
+	                            <p>Tank Jobs</p>
+	                            <div id="jobTankPanel" class="jobPanel"></div>
+	                          </div>
+	                          <div class="jobPanelWrap">
+
+	                            <p>DPS Jobs</p>
+	                            <div id="jobDPSPanel" class="jobPanel"></div>
+	                          </div>
+	                          <div class="jobPanelWrap">
+
+	                            <p>Healer Jobs</p>
+	                            <div id="jobHealerPanel" class="jobPanel"></div>
+	                          </div>
+	                        </div>
+                      	</div>
+                      </div>
+                      
+                      <div style="claer: both;"></div>
+
+                      <div id="charaILBox">
+                        <p id="" class="subTitle">Distribution of Main hand Item Level in each Jobs</p>
+		               <div id="il_legend"></div>
+                        <div id="charaILWrap">
+                          <div id="charaILPanel"></div>
+                          <ul id="charail-label">
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-prd.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-war.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-drk.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-mnk.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-drg.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-nin.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-sam.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-brd.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-mcn.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-blm.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-smn.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-red.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-whm.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-sch.png"></li>
+                            <li><img src="http://luckybancho.ldblog.jp/wsurvey/images/skl/sk-ast.png"></li>
+                          </ul>                          
+                        </div>
+                      </div>
+
+
+
+
+                    </div>
+                  </div>
+                  <div class="article-header">
+                    <div class="article-title-outer">
+                      <h2 class="article-title entry-title">Gland Companies</h2>
+                    </div>
+
+                  </div>
+                  <!-- articleHeader End -->
+
+                  <div class="article-body entry-content">
+                    <div class="article-body-inner">
+                      <div id="belongBox">
+                        <p id="" class="subTitle">Belong</p>
+                        <div id="belongWrap">
+                          <table id="belongTable" class="survey">
+                            <tr>
+                              <th class="t_top" style="width: 180px;">Belong</th>
+                              <th class="t_top">Characters</th>
+                              <th class="t_top">rate</th>
+                              <th class="t_top">FC count</th>
+                              <th class="t_top">FC member total</th>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/gc/malstrom.png">
+                                <p>Maelstrom</p>
+                              </td>
+                              <td class="value"><span id="gbc_0">000</span></td>
+                              <td class="value"><span id="gbr_0">000</span></td>
+                              <td class="value"><span id="gbf_0">000</span></td>
+                              <td class="value"><span id="gbm_0">000</span></td>
+
+                            </tr>
+                            <tr class="odd">
+                              <td class="odd"><img src="http://luckybancho.ldblog.jp/wsurvey/images/gc/twinsnake.png">
+                                <p>Order of the Twin Adder</p>
+                              </td>
+                              <td class="value"><span id="gbc_1">000</span></td>
+                              <td class="value"><span id="gbr_1">000</span></td>
+                              <td class="value"><span id="gbf_1">000</span></td>
+                              <td class="value"><span id="gbm_1">000</span></td>
+
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/gc/immortal.png">
+                                <p>Immortal Flames</p>
+                              </td>
+                              <td class="value"><span id="gbc_2">000</span></td>
+                              <td class="value"><span id="gbr_2">000</span></td>
+                              <td class="value"><span id="gbf_2">000</span></td>
+                              <td class="value"><span id="gbm_2">000</span></td>
+                            </tr>
+                            <tr class="odd">
+                              <td>
+                                <p style="margin-left: 38px;">Independence</p>
+                              </td>
+                              <td class="value"><span id="gbc_3">000</span></td>
+                              <td class="value"><span id="gbr_3">000</span></td>
+                              <td class="value"><span id="gbf_3">-</span></td>
+                              <td class="value"><span id="gbm_3">-</span></td>
+
+                            </tr>
+                          </table>
+                          <div id="belongPanel"></div>
+                        </div>
+                      </div>
+
+
+                      <div id="gcranBox">
+                        <p id="" class="subTitle">Rank of GC</p>
+                        <div id="gcrankWrap">
+                          <div id="gcrankPanel"></div>
+                        </div>
+                        <div>
+                          <ul id="gc-label" style="padding-left: 70px;">
+                            <li style="width: 160px; padding-right: 100px; text-align: center;">Maelstrom
+                              <br>
+                              <img src="http://luckybancho.ldblog.jp/wsurvey/images/gc/malstrom.png"></li>
+                            <li style="width: 160px; padding-right: 110px; text-align: center;">Order of the Twin Adder
+                              <br> <img src="http://luckybancho.ldblog.jp/wsurvey/images/gc/twinsnake.png">
+                            </li>
+                            <li style="width: 160px; padding-right: 0px; text-align: center;">Immortal Flames
+                              <br> <img src="http://luckybancho.ldblog.jp/wsurvey/images/gc/immortal.png">
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="article-header">
+                    <div class="article-title-outer">
+                      <h2 class="article-title entry-title">Free Companies</h2>
+                    </div>
+                    <div class="sub-title">
+	                    <h3>FC and FC Members's count  are based active character.
+	                    </h3>
+                    <div>                    
+                  </div>
+                  <!-- articleHeader End -->
+
+                  <div id="fcTrendBox">
+                    <p id="" class="subTitle">Free Companiy created at</p>
+                    <div id="fcTrendWrap">
+                      <div id="fcTrendPanel"></div>
+                    </div>
+                  </div>
+                  <div id="fcMemberBox">
+                    <p id="" class="subTitle">Free Companie's size</p>
+                    <div id="fcMemberWrap">
+                      <div id="fcMemberPanel"></div>
+                    </div>
+                  </div>
+
+                  <div id="fcbelongPanel_wrap">
+                    <div id="fcbelongPanel_summary">
+                      <p id="lfcbelongPanel_Title" class="subTitle">Member's total each FC size</p>
+                      <table id="fcbelongTable" class="survey">
+                        <tr>
+                          <th class="t_top">FC size</th>
+                          <th class="t_top">member total</th>
+                          <th class="t_top">rate</th>
+                        </tr>
+                        <tr>
+                          <td>1 to 3</td>
+                          <td class="num" id="fcbelong0">000</td>
+                          <td class="num" id="fcbelongr0">000</td>
+                        </tr>
+                        <tr class="odd">
+                          <td>4 to 9</td>
+                          <td class="num" id="fcbelong1">000</td>
+                          <td class="num" id="fcbelongr1">000</td>
+                        </tr>
+                        <tr>
+                          <td>10 to 29</td>
+                          <td class="num" id="fcbelong2">000</td>
+                          <td class="num" id="fcbelongr2">000</td>
+                        </tr>
+                        <tr class="odd">
+                          <td>30 to 49</td>
+                          <td class="num" id="fcbelong3">000</td>
+                          <td class="num" id="fcbelongr3">000</td>
+                        </tr>
+                        <tr>
+                          <td>50 to 99</td>
+                          <td class="num" id="fcbelong4">000</td>
+                          <td class="num" id="fcbelongr4">000</td>
+                        </tr>
+                        <tr class="odd">
+                          <td>100 over</td>
+                          <td class="num" id="fcbelong5">000</td>
+                          <td class="num" id="fcbelongr5">000</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div id="fcbelongPanel"></div>
+                  </div>
+
+
+                  <!-- articleBody End -->
+
+
+                  <div class="article-header">
+                    <div class="article-title-outer">
+                      <h2 class="article-title entry-title">Minions / Mounts</h2>
+                    </div>
+
+                  </div>
+                  <!-- articleHeader End -->
+
+                  <div class="article-body entry-content">
+                    <div class="article-body-inner">
+
+                      <div id="minionCountBox">
+                        <p id="" class="subTitle">Distribution of the minion acquisition
+                        </p>
+                        <div id="minionCountWrap">
+                          <div id="minionCountPanel"></div>
+                        </div>
+                      </div>
+
+
+
+                      <div id="specialMinionBox">
+                        <p id="" class="subTitle">Acquisition rate of Special minion/mount
+                        </p>
+                        <div id="specialMinionWrap">
+                          <table id="specialMinionTable" class="survey">
+                            <tr>
+                              <th class="t_top" colspan="2" style="width: 120px;">Minion/Mount</th>
+                              <th class="t_top" style="width: 80px;">Characters</th>
+                              <th class="t_top" style="width: 80px;">rate</th>
+                              <th class="t_top">remark</th>
+                              <th class="t_top" style="width: 50px;">World
+                                <br>rank
+                              </th>
+                              <th class="t_top" style="width: 50px;">Area
+                                <br>rank
+                              </th>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_012.png"></td>
+                              <td>wind-up airship</td>
+                              <td class="a_right"><span id="sp_v1"></span></td>
+                              <td class="a_right"><span id="sp_r1"></span></td>
+                              <td>Lv14 Main Quest : 3 Area Airship unlock</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','wind-up airship','minion','マメット・インビンシブル');"><span
+																	id="sp_w1"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','wind-up airship','minion','マメット・インビンシブル');"><span
+																	id="sp_g1"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_004.png"></td>
+                              <td>Company Chocobo</td>
+                              <td class="a_right"><span id="sp_v2"></span></td>
+                              <td class="a_right"><span id="sp_r2"></span></td>
+                              <td>Lv20 Main Quest : belong to Grand Campany</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Company Chocobo','mount','マイチョコボ');"><span
+																	id="sp_w2"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Company Chocobo','mount','マイチョコボ');"><span
+																	id="sp_g2"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_027.png"></td>
+                              <td>goobbue sproutling</td>
+                              <td class="a_right"><span id="sp_v3"></span></td>
+                              <td class="a_right"><span id="sp_r3"></span></td>
+                              <td>Lv33 Main Quest ：Bacchus's Wine</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','goobbue sproutling','minion','グゥーブー・スプラウト');"><span
+																	id="sp_w3"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','goobbue sproutling','minion','グゥーブー・スプラウト');"><span
+																	id="sp_g3"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_001.png"></td>
+                              <td>Magitek Armor</td>
+                              <td class="a_right"><span id="sp_v4"></span></td>
+                              <td class="a_right"><span id="sp_r4"></span></td>
+                              <td>Lv50 Main Quest ：Main Story complete</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Magitek Armor','mount','魔導アーマー');"><span
+																	id="sp_w4"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Magitek Armor','mount','魔導アーマー');"><span
+																	id="sp_g4"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_110.png"></td>
+                              <td>Midgardsormr</td>
+                              <td class="a_right"><span id="sp_v27"></span></td>
+                              <td class="a_right"><span id="sp_r27"></span></td>
+                              <td>Patch2.5Main Quest ：The Rising Chorus complete</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Midgardsormr','minion','ミドガルズオルム');"><span
+																	id="sp_w27"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Midgardsormr','minion','ミドガルズオルム');"><span
+																	id="sp_g27"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_039.png"></td>
+                              <td>Black Chocobo</td>
+                              <td class="a_right"><span id="sp_v29"></span></td>
+                              <td class="a_right"><span id="sp_r29"></span></td>
+                              <td>Patch3.0 LV50 Main Quest：Divine Intervention complete</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Black Chocobo','mount','黒チョコボ');"><span
+																			id="sp_w29"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Black Chocobo','mount','黒チョコボ');"><span
+																			id="sp_g29"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_037.png"></td>
+                              <td>Manacutter</td>
+                              <td class="a_right"><span id="sp_v30"></span></td>
+                              <td class="a_right"><span id="sp_r30"></span></td>
+                              <td>Patch3.0 LV55 Main Quest：Into the Aery complete</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Manacutter','mount','マナカッター');"><span
+																			id="sp_w30"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Manacutter','mount','マナカッター');"><span
+																			id="sp_g30"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_038.png"></td>
+                              <td>Midgardsormr</td>
+                              <td class="a_right"><span id="sp_v31"></span></td>
+                              <td class="a_right"><span id="sp_r31"></span></td>
+                              <td>Patch3.0 LV59 Main Quest：Fetters of Lament complete</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Midgardsormr','mount','ミドガルズオルム');"><span
+																			id="sp_w31"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Midgardsormr','mount','ミドガルズオルム');"><span
+																			id="sp_g31"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_156.png"></td>
+                              <td>Wind-up Haurchefant</td>
+                              <td class="a_right"><span id="sp_v36"></span></td>
+                              <td class="a_right"><span id="sp_r36"></span></td>
+                              <td>Patch3.15 LV60 Main Quest：As Goes Light, So Goes Darkness complete</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Haurchefant率','minion','マメット・オルシュファン');"><span
+																			id="sp_w36"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Haurchefant','minion','マメット・オルシュファン');"><span
+																			id="sp_g36"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_160.png"></td>
+                              <td>Poro Roggo</td>
+                              <td class="a_right"><span id="sp_v37"></span></td>
+                              <td class="a_right"><span id="sp_r37"></span></td>
+                              <td>Patch3.2 LV60 Main Quest：The Word of the Mother complete</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Poro Roggo','minion','ポロ・ロッゴ');"><span
+																			id="sp_w37"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Poro Roggo','minion','ポロ・ロッゴ');"><span
+																			id="sp_g37"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_182.png"></td>
+                              <td>Wind-up Aymeric</td>
+                              <td class="a_right"><span id="sp_v39"></span></td>
+                              <td class="a_right"><span id="sp_r39"></span></td>
+                              <td>Patch3.3 LV60 Main Quest：Litany of Peace </td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Aymeric','minion','マメット・アイメリク');"><span
+																			id="sp_w39"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Aymeric','minion','マメット・アイメリク');"><span
+																			id="sp_g39"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_204.png"></td>
+                              <td>Wind-up Moenbryda</td>
+                              <td class="a_right"><span id="sp_v40"></span></td>
+                              <td class="a_right"><span id="sp_r40"></span></td>
+                              <td>Patch3.4 LV60 Main Quest：An Ending to Mark a New Beginning </td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Moenbryda率','minion','マメット・ムーンブリダ');"><span
+																			id="sp_w40"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Moenbryda','minion','マメット・ムーンブリダ');"><span
+																			id="sp_g40"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_080.png"></td>
+                              <td>Yol</td>
+                              <td class="a_right"><span id="sp_v42"></span></td>
+                              <td class="a_right"><span id="sp_r42"></span></td>
+                              <td>Patch4.0 LV65  Main Quest：In the Footsteps of Bardam the Brave</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Yol','mount','ヨル');"><span
+																			id="sp_w42"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Yol','mount','ヨル');"><span
+																			id="sp_g42"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_111.png"></td>
+                              <td>Wind-up Gentleman</td>
+                              <td class="a_right"><span id="sp_v28"></span></td>
+                              <td class="a_right"><span id="sp_r28"></span></td>
+                              <td>Hildibrand Quests complete</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Gentleman','minion','マメット・ヒルディ');"><span
+																	id="sp_w28"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Gentleman','minion','マメット・ヒルディ');"><span
+																	id="sp_g28"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_098.png"></td>
+                              <td>Wind-up Louisoix</td>
+                              <td class="a_right"><span id="sp_v25"></span></td>
+                              <td class="a_right"><span id="sp_r25"></span></td>
+                              <td>Bahamut Quests ：The Final Coil complete</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Louisoix','minion','マメット・ルイゾワ');"><span
+																	id="sp_w25"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Louisoix','minion','マメット・ルイゾワ');"><span
+																	id="sp_g25"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_003.png"></td>
+                              <td>Legacy Chocobo</td>
+                              <td class="a_right"><span id="sp_v5"></span></td>
+                              <td class="a_right"><span id="sp_r5"></span></td>
+                              <td>Legacy account privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Legacy Chocobo','mount','レガシーチョコボ');"><span
+																	id="sp_w5"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Legacy Chocobo','mount','レガシーチョコボ');"><span
+																	id="sp_g5"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_014.png"></td>
+                              <td>Cait Sith doll</td>
+                              <td class="a_right"><span id="sp_v6"></span></td>
+                              <td class="a_right"><span id="sp_r6"></span></td>
+                              <td>Early reservation privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Cait Sith doll','minion','マメット・ケットシー');"><span
+																	id="sp_w6"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Cait Sith doll','minion','マメット・ケットシー');"><span
+																	id="sp_g6"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_028.png"></td>
+                              <td>baby behemoth</td>
+                              <td class="a_right"><span id="sp_v7"></span></td>
+                              <td class="a_right"><span id="sp_r7"></span></td>
+                              <td>Collectors Edition privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','baby behemoth','minion','ベビーモス');"><span
+																	id="sp_w7"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','baby behemoth','minion','ベビーモス');"><span
+																	id="sp_g7"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_005.png"></td>
+                              <td>Coeurl</td>
+                              <td class="a_right"><span id="sp_v8"></span></td>
+                              <td class="a_right"><span id="sp_r8"></span></td>
+                              <td>Collectors Edition privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Coeurl','mount','クァール');"><span
+																	id="sp_w8"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Coeurl','mount','クァール');"><span
+																	id="sp_g8"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_059.png"></td>
+                              <td>Wind-up Moogle</td>
+                              <td class="a_right"><span id="sp_v19"></span></td>
+                              <td class="a_right"><span id="sp_r19"></span></td>
+                              <td>Collectors Edition privilege(PS4 releace)</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Moogle','minion','マメット・モーグリ');"><span
+																	id="sp_w19"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Moogle','minion','マメット・モーグリ');"><span
+																	id="sp_g19"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_013.png"></td>
+                              <td>Fat Chocobo</td>
+                              <td class="a_right"><span id="sp_v20"></span></td>
+                              <td class="a_right"><span id="sp_r20"></span></td>
+                              <td>Collectors Edition privilege(PS4 releace)</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Fat Chocobo','mount','でぶチョコボ');"><span
+																	id="sp_w20"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Fat Chocobo','mount','でぶチョコボ');"><span
+																	id="sp_g20"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_036.png"></td>
+                              <td>Griffin</td>
+                              <td class="a_right"><span id="sp_v32"></span></td>
+                              <td class="a_right"><span id="sp_r32"></span></td>
+                              <td>Heavensward's Collectors Edition privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Griffin','mount','グリフィン');"><span
+																			id="sp_w32"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Griffin','mount','グリフィン');"><span
+																			id="sp_g32"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_226.png"></td>
+                              <td>Wind-up Bartz</td>
+                              <td class="a_right"><span id="sp_v44"></span></td>
+                              <td class="a_right"><span id="sp_r44"></span></td>
+                              <td>Stormblood's Collectors Edition privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Bartz','minion','マメット・バッツ');"><span
+																			id="sp_w44"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Bartz','minion','マメット・バッツ');"><span
+																			id="sp_g44"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_081.png"></td>
+                              <td>Syldra</td>
+                              <td class="a_right"><span id="sp_v43"></span></td>
+                              <td class="a_right"><span id="sp_r43"></span></td>
+                              <td>Stormblood's Collectors Edition privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Syldra','mount','シルドラ');"><span
+																			id="sp_w43"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Syldra','mount','シルドラ');"><span
+																			id="sp_g43"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_227.png"></td>
+                              <td>Wind-up Red Mage</td>
+                              <td class="a_right"><span id="sp_v45"></span></td>
+                              <td class="a_right"><span id="sp_r45"></span></td>
+                              <td>Stormblood's Pre-ordering privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Red Mage','minion','マメット・レッドメイジ');"><span
+																			id="sp_w45"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Red Mage','minion','マメット・レッドメイジ');"><span
+																			id="sp_g45"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_019.png"></td>
+                              <td>wind-up cursor</td>
+                              <td class="a_right"><span id="sp_v9"></span></td>
+                              <td class="a_right"><span id="sp_r9"></span></td>
+                              <td>Veteran Rewards：30 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','wind-up cursor','minion','マメット・カーソル');"><span
+																	id="sp_w9"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','wind-up cursor','minion','マメット・カーソル');"><span
+																	id="sp_g9"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_026.png"></td>
+                              <td>black chocobo chick</td>
+                              <td class="a_right"><span id="sp_v10"></span></td>
+                              <td class="a_right"><span id="sp_r10"></span></td>
+                              <td>Veteran Rewards：60 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','black chocobo chick','minion','黒チョコチョコボ');"><span
+																	id="sp_w10"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','black chocobo chick','minion','黒チョコチョコボ');"><span
+																	id="sp_g10"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_018.png"></td>
+                              <td>beady eye</td>
+                              <td class="a_right"><span id="sp_v11"></span></td>
+                              <td class="a_right"><span id="sp_r11"></span></td>
+                              <td>Veteran Rewards：90 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','beady eye','minion','タイニーアイ');"><span
+																	id="sp_w11"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','beady eye','minion','タイニーアイ');"><span
+																	id="sp_g11"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_007.png"></td>
+                              <td>Ahriman</td>
+                              <td class="a_right"><span id="sp_v12"></span></td>
+                              <td class="a_right"><span id="sp_r12"></span></td>
+                              <td>Veteran Rewards：90 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Ahriman','mount','アーリマン');"><span
+																	id="sp_w12"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Ahriman','mount','アーリマン');"><span
+																	id="sp_g12"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_053.png"></td>
+                              <td>Minion of Light</td>
+                              <td class="a_right"><span id="sp_v14"></span></td>
+                              <td class="a_right"><span id="sp_r14"></span></td>
+                              <td>Veteran Rewards：180 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Minion of Light','minion','マメット・オブ・ライト');"><span
+																	id="sp_w14"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Minion of Light','minion','マメット・オブ・ライト');"><span
+																	id="sp_g14"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_050.png"></td>
+                              <td>wind-up leader</td>
+                              <td class="a_right"><span id="sp_v15"></span></td>
+                              <td class="a_right"><span id="sp_r15"></span></td>
+                              <td>Veteran Rewards：270 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','wind-up leader取得率','minion','マメット・リーダー');"><span
+																	id="sp_w15"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','wind-up leader取得率','minion','マメット・リーダー');"><span
+																	id="sp_g15"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/mount/mount_010.png"></td>
+                              <td>Behemoth</td>
+                              <td class="a_right"><span id="sp_v16"></span></td>
+                              <td class="a_right"><span id="sp_r16"></span></td>
+                              <td>Veteran Rewards：270 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Behemoth','mount','ベヒーモス');"><span
+																	id="sp_w16"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Behemoth','mount','ベヒーモス');"><span
+																	id="sp_g16"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_062.png"></td>
+                              <td>Wind-up Odin</td>
+                              <td class="a_right"><span id="sp_v17"></span></td>
+                              <td class="a_right"><span id="sp_r17"></span></td>
+                              <td>Veteran Rewards：360 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Odin','mount','マメット・オーディン');"><span
+																	id="sp_w17"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Odin','mount','マメット・オーディン');"><span
+																	id="sp_g17"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_063.png"></td>
+                              <td>Wind-up Warrior of Light</td>
+                              <td class="a_right"><span id="sp_v18"></span></td>
+                              <td class="a_right"><span id="sp_r18"></span></td>
+                              <td>Veteran Rewards：360 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Warrior of Light','mount','ウォーリア・オブ・ライト');"><span
+																	id="sp_w18"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Warrior of Light','mount','ウォーリア・オブ・ライト');"><span
+																	id="sp_g18"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_080.png"></td>
+                              <td>Wind-up Goblin</td>
+                              <td class="a_right"><span id="sp_v22"></span></td>
+                              <td class="a_right"><span id="sp_r22"></span></td>
+                              <td>Veteran Rewards：450 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Goblin','minion','マメット・ゴブリン');"><span
+																	id="sp_w22"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Goblin','minion','マメット・ゴブリン');"><span
+																	id="sp_g22"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_091.png"></td>
+                              <td>Wind-up Gilgamesh</td>
+                              <td class="a_right"><span id="sp_v23"></span></td>
+                              <td class="a_right"><span id="sp_r23"></span></td>
+                              <td>Veteran Rewards：540 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Gilgamesh','mount','マメット・ギルガメッシュ');"><span
+																	id="sp_w23"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Gilgamesh','mount','マメット・ギルガメッシュ');"><span
+																	id="sp_g23"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_105.png"></td>
+                              <td>Wind-up Nanamo</td>
+                              <td class="a_right"><span id="sp_v24"></span></td>
+                              <td class="a_right"><span id="sp_r24"></span></td>
+                              <td>Veteran Rewards：630 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Nanamo','minion','マメット・ナナモ');"><span
+																	id="sp_w24"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Nanamo','minion','マメット・ナナモ');"><span
+																	id="sp_g24"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_143.png"></td>
+                              <td>Wind-up Firion</td>
+                              <td class="a_right"><span id="sp_v33"></span></td>
+                              <td class="a_right"><span id="sp_r33"></span></td>
+                              <td>Veteran Rewards：960 days</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Firion','minion','マメット・フリオニール);"><span
+																			id="sp_w33"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Firion','minion','マメット・フリオニール');"><span
+																			id="sp_g33"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_031.png"></td>
+                              <td>wind-up Dalamud</td>
+                              <td class="a_right"><span id="sp_v13"></span></td>
+                              <td class="a_right"><span id="sp_r13"></span></td>
+                              <td>sound track "BeforMeteor" privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','wind-up Dalamud','minion','マメット・ダラガブ');"><span
+																	id="sp_w13"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','wind-up Dalamud','minion','マメット・ダラガブ');"><span
+																	id="sp_g13"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_064.png"></td>
+                              <td>Wind-up Bahamut</td>
+                              <td class="a_right"><span id="sp_v21"></span></td>
+                              <td class="a_right"><span id="sp_r21"></span></td>
+                              <td>sound track "A REALM REBORN" privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Bahamut','minion','マメット・バハムート');"><span
+																	id="sp_w21"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Bahamut','minion','マメット・バハムート');"><span
+																	id="sp_g21"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_146.png"></td>
+                              <td>Set Of Primogs</td>
+                              <td class="a_right"><span id="sp_v34"></span></td>
+                              <td class="a_right"><span id="sp_r34"></span></td>
+                              <td>sound track "BEFORE THE FALL" privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Set Of Primogs','minion','ザ・プライモグズ');"><span
+																			id="sp_w34"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Set Of Primogs','minion','ザ・プライモグズ);"><span
+																			id="sp_g34"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_169.png"></td>
+                              <td>Spoony Bard</td>
+                              <td class="a_right"><span id="sp_v38"></span></td>
+                              <td class="a_right"><span id="sp_r38"></span></td>
+                              <td>sound track "Heavensward" privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Spoony Bard','minion','マメット・ギルバート');"><span
+																			id="sp_w38"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Spoony Bard','minion','マメット・ギルバート);"><span
+																			id="sp_g38"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_247.png"></td>
+                              <td>Wind-up Nidhogg</td>
+                              <td class="a_right"><span id="sp_v46"></span></td>
+                              <td class="a_right"><span id="sp_r46"></span></td>
+                              <td>sound track "THE FAR EDGE OF FATE" privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Nidhogg','minion','マメット・ニーズヘッグ');"><span
+																			id="sp_w46"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Nidhogg','minion','マメット・ニーズヘッグ');"><span
+																			id="sp_g46"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_108.png"></td>
+                              <td>Model Enterprise</td>
+                              <td class="a_right"><span id="sp_v26"></span></td>
+                              <td class="a_right"><span id="sp_r26"></span></td>
+                              <td>art book "A Realm Reborn The Art of Eorzea" privilege
+                              </td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Model Enterprise','minion','マメット・エンタープライズ');"><span
+																	id="sp_w26"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Model Enterprise','minion','マメット・エンタープライズ');"><span
+																	id="sp_g26"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_144.png"></td>
+                              <td>Wind-up Relm</td>
+                              <td class="a_right"><span id="sp_v35"></span></td>
+                              <td class="a_right"><span id="sp_r35"></span></td>
+                              <td>art book "The Art of Ishgard - Stone and Steel -" privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Relm','minion','マメット・リルム');"><span
+																			id="sp_w35"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Relm','minion','マメット・リルム');"><span
+																			id="sp_g35"></span></a></td>
+                            </tr>
+                            <tr>
+                              <td><img src="http://luckybancho.ldblog.jp/wsurvey/images/minion/minion_219.png"></td>
+                              <td>Wind-up Hraesvelgr</td>
+                              <td class="a_right"><span id="sp_v41"></span></td>
+                              <td class="a_right"><span id="sp_r41"></span></td>
+                              <td>art book "The Art of Ishgard　- The Scars of War -" privilege</td>
+                              <td><a onclick="showRanking('world_rank','rate','desc','Wind-up Hraesvelgr','minion','マメット・フレースヴェルグ');"><span
+																			id="sp_w41"></span></a></td>
+                              <td><a onclick="showRanking('group_rank','rate','desc','Wind-up Hraesvelgr','minion','マメット・フレースヴェルグ');"><span
+																			id="sp_g41"></span></a></td>
+                            </tr>
+                          </table>
+
+                        </div>
+                      </div>
+
+
+
+                      <div id="minionRankdBox">
+                        <p id="" class="subTitle">Minion Ranking</p>
+                        <div id="minionRankWrap">
+                          <div id="minionRank"></div>
+                        </div>
+                      </div>
+
+                      <div style="clear: both;"></div>
+                      <div id="mountRankdBox">
+                        <p id="" class="subTitle">Mount Ranking</p>
+                        <div id="mountRankWrap">
+                          <div id="mountRank"></div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <!-- レベル分布 End -->
+            </div>
+
+          </div>
+
+          <div id="worldSelectMenu">
+            <div id="selectTitle" onclick="closeWorldSelect();">
+              <span id="selectTitleEn">WORLD SELECT</span> <span id="selectTitleJp">Please select a world you want to see
+									the report.</span>
+            </div>
+            <table>
+              <tr>
+                <th>Elemental&nbsp;(JP)</th>
+              </tr>
+              <tr>
+                <td>
+                  <ul>
+                    <li><a class='worldoption' onclick='jumpWorld("Aegis");'>Aegis</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Atomos");'>Atomos</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Carbuncle");'>Carbuncle</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Garuda");'>Garuda</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Gungnir");'>Gungnir</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Kujata");'>Kujata</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Ramuh");'>Ramuh</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Tonberry");'>Tonberry</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Typhon");'>Typhon</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Unicorn");'>Unicorn</a></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Gaia&nbsp;(JP)</th>
+              </tr>
+              <tr>
+                <td>  
+                  <ul>
+                    <li><a class='worldoption' onclick='jumpWorld("Alexander");'>Alexander</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Bahamut");'>Bahamut</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Durandal");'>Durandal</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Fenrir");'>Fenrir</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Ifrit");'>Ifrit</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Ridill");'>Ridill</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Tiamat");'>Tiamat</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Ultima");'>Ultima</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Valefor");'>Valefor</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Yojimbo");'>Yojimbo</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Zeromus");'>Zeromus</a></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Mana&nbsp;(JP)</th>
+              </tr>
+              <tr>
+                <td>  
+                  <ul>
+                    <li><a class='worldoption' onclick='jumpWorld("Anima");'>Anima</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Asura");'>Asura</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Belias");'>Belias</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Chocobo");'>Chocobo</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Hades");'>Hades</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Ixion");'>Ixion</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Mandragora");'>Mandragora</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Masamune");'>Masamune</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Pandaemonium");'>Pandaemonium</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Shinryu");'>Shinryu</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Titan");'>Titan</a></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Aether&nbsp;(NA)</th>
+              </tr>
+              <tr>
+                <td>  
+                  <ul>
+                    <li><a class='worldoption' onclick='jumpWorld("Adamantoise");'>Adamantoise</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Balmung");'>Balmung</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Cactuar");'>Cactuar</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Coeurl");'>Coeurl</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Faerie");'>Faerie</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Gilgamesh");'>Gilgamesh</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Goblin");'>Goblin</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Jenova");'>Jenova</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Mateus");'>Mateus</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Midgardsormr");'>Midgardsormr</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Sargatanas");'>Sargatanas</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Siren");'>Siren</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Zalera");'>Zalera</a></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Primal&nbsp;(NA)</th>
+              </tr>
+              <tr>
+                <td>  
+                  <ul>
+                    <li><a class='worldoption' onclick='jumpWorld("Behemoth");'>Behemoth</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Brynhildr");'>Brynhildr</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Diabolos");'>Diabolos</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Excalibur");'>Excalibur</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Exodus");'>Exodus</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Famfrit");'>Famfrit</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Hyperion");'>Hyperion</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Lamia");'>Lamia</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Leviathan");'>Leviathan</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Malboro");'>Malboro</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Ultros");'>Ultros</a></li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>Chaos&nbsp;(EU)</th>
+              </tr>
+              <tr>
+                <td>  
+                  <ul>
+                    <li><a class='worldoption' onclick='jumpWorld("Cerberus");'>Cerberus</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Lich");'>Lich</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Louisoix");'>Louisoix</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Moogle");'>Moogle</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Odin");'>Odin</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Omega");'>Omega</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Phoenix");'>Phoenix</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Ragnarok");'>Ragnarok</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Shiva");'>Shiva</a></li>
+                    <li><a class='worldoption' onclick='jumpWorld("Zodiark");'>Zodiark</a></li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+
+
+          <div id="worldRank">
+
+            <div id="survey-info-wrap" class="ranking-outer hentry">
+              <div class="ranking-outer-2">
+
+                <div class="ranking-header">
+                  <div class="ranking-title-outer">
+                    <h2 class="article-title">
+												<span id="ranking-title"></span> Ranking
+											</h2>
+                  </div>
+
+                </div>
+                <!-- articleHeader End -->
+                <p id="ranking_close">
+                  <a onclick="$.unblockUI();">Close</a>
+                </p>
+                <div class="ranking-outer-3">
+
+                  <div id="ranking-table-wrap" class="article-body entry-content scroll_area">
+                    <div style="">
+                      <table id="rankingTable" class="survey">
+                        <tr id="rankingHeader">
+                          <th class="t_top">Rank</th>
+                          <th class="t_top">World</th>
+                          <th class="t_top">DC Group</th>
+                          <th class="t_top">Category</th>
+                          <th class="t_top">Rate</th>
+                          <th class="t_top">Count</th>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="yubi">
+            <img src="http://luckybancho.ldblog.jp/wsurvey/images/lyubi.png" height="200" width="200">
+          </div>
+
+          <!-- google_ad_section_end -->
+          <!-- ArticlesLoop End -->
+
+        </div>
+        <!-- content End -->
+
+
+        <!-- container End -->
+
+      </div>
+    </div>
+    <!-- ................ Footer .................. -->
+    <div class="footer-outer">
+      <div class="footer-outer-2">
+        <!-- Blog Common Footer // -->
+        <div id="footer">
+          <p>
+            Powered by <a href="http://blog.livedoor.com/" title="ライブドアブログ">ライブドアブログ</a>
+          </p>
+        </div>
+        <!-- // Blog Common Footer -->
+        <div id="copyright">
+          記載されている会社名・製品名・システム名などは、各社の商標、または登録商標です。
+          <br /> Copyright (C) 2010 - 2016 SQUARE ENIX CO., LTD. All Rights Reserved.
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Add Body Tag // -->
+    <!-- // Add Body Tag -->
+
+
+
+    <script>
+      if ("http:" == window.location.protocol) {
+        (function(i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+          a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+        })(window, document, 'script',
+          '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-43455158-1', 'ldblog.jp');
+        ga('send', 'pageview');
+      }
+    </script>
+</body>
+
+</html>
