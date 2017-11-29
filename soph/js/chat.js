@@ -186,8 +186,6 @@ var chat = {
     }
 };
 
-//document.getElementById('loadingModal').style.display = "block";
-//document.getElementById('chatWindow').style.display = "none";
 Papa.parse("chat.csv",{
 	delimiter: ",",
 	download: true,
@@ -213,6 +211,7 @@ Papa.parse("chat.csv",{
 		});
 		document.getElementById('loadingModal').style.display = "none";
 		document.getElementById('chatWindow').style.display = "block";
+		document.getElementById('feedbackDiv').style.display = "block";
 		chat.init();
 		quickQuery("send_greeting");
 	}
