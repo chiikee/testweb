@@ -59,12 +59,22 @@ body {
 }
 
 .chat {
-  width: 750px;
-  float: left;
-  background: #F2F5F8;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  color: #434651;
+	padding: 97px 0px 181px;
+	position: relative;
+	width: 750px;
+	float: left;
+	background: #F2F5F8;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	color: #434651;
+	height: 89vh;
+}
+.chat-header {
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border-top-right-radius: 5px;
 }
 .chat .chat-header {
   padding: 20px;
@@ -90,6 +100,11 @@ body {
   color: #D8DADF;
   font-size: 20px;
   margin-top: 12px;
+}
+.chat-history{
+	width: 100%;
+	height: 100%;
+	overflow-y:scroll;
 }
 .chat .chat-history {
   padding: 30px 30px 20px;
@@ -137,6 +152,12 @@ body {
 .chat .chat-history .other-message:after {
   border-bottom-color: #94C2ED;
   left: 93%;
+}
+.chat-message{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
 }
 .chat .chat-message {
   padding: 30px;
