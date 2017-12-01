@@ -85,6 +85,7 @@ var chat = {
 			this.suggestedKeyword = "";
 		}
 		
+	    	sMatch = ""; //just to init to blank
 		for(i=1;i<arr.length;i++){
 			if(arr[i].length < 6){
 				continue; //ignore incomplete rows in the csv we need at least 6 columns to function properly
@@ -94,13 +95,23 @@ var chat = {
 				//if(query.toLowerCase().indexOf(sKeywords[j])>-1){
 				if(query.search(new RegExp("\\b"+sKeywords[j]+"\\b","i"))>-1){ //this might be super slow with regex, but provides more reliable results
 					bFound = true;
-					sMatch = sKeywords[j];
-					if(arr[i][5].toLowerCase()=="general"){
-						iGeneralResponses.push(i);
-					}else{
-						iContentResponses.push(i); //assume anything not labelled as "general" is content
+					//if the newly matched keyword is longer than the previous one, then we clear the existing array of less specific keywords
+					//this assumes that longer keywords are more specific...which is usually the case
+					if(sKeywords[j].length > sMatch.length){
+						//can clear both because either ways it doesn't matter
+						iGeneralResponses = [];
+						iContentResponses = [];
+						sMatch = sKeywords[j]; //update sMatch to the longest...or on the first iteration, the first matched keyword
 					}
-					break;
+					if(sKeywords[j].length == sMatch.length){ //which would be the case considering any longer keywords would have replaced sMatch
+						if(arr[i][5].toLowerCase()=="general"){
+							iGeneralResponses.push(i);
+						}else{
+							iContentResponses.push(i); //assume anything not labelled as "general" is content
+						}
+					}
+					//we shouldn't break anymore, we want to test all the keywords to get the most specific match
+					//break;
 				}
 				//if the standard lookup picks up nothing, let's do a phrase search in preparation for alternatives
 				//don't do for less than 2 characters
