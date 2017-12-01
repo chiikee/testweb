@@ -3,6 +3,19 @@
   box-sizing: border-box;
 }
 
+/* reset some of the resetted stuff */
+div.my-message b {font-weight:bold;}
+div.my-message i {font-style:italic;}
+div.my-message u {text-decoration: underline;}
+div.my-message ul {
+	list-style-type: disc;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 40px;
+}
+
 body {
   background: #C5DDEB;
   font: 14px/20px "Lato", Arial, sans-serif;
@@ -64,8 +77,7 @@ body {
 	width: 750px;
 	float: left;
 	background: #F2F5F8;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-radius: 5px 5px 0px 0px;
 	color: #434651;
 	height: 89vh;
 }
@@ -74,7 +86,7 @@ body {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	border-top-right-radius: 5px;
+	border-radius: 5px 5px 0px 0px;
 }
 .chat .chat-header {
   padding: 20px;
@@ -110,8 +122,8 @@ body {
   padding: 30px 30px 20px;
   border-bottom: 2px solid white;
   overflow-y: scroll;
-  //height: 575px;
-  //height: 61vh;
+  /*height: 575px;*/
+  /*height: 61vh;*/
 }
 .chat .chat-history .message-data {
   margin-bottom: 15px;
