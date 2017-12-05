@@ -201,7 +201,7 @@ var chat = {
 			if(query.length > 1){
 				for(i=0;i<this.keywordList.length;i++){
 					if(this.keywordList[i].search(new RegExp("\\b"+query.toLowerCase(),"i"))>-1){
-						sMatchPhrases.push(sKeywords[j]);	
+						sMatchPhrases.push(this.keywordList[i]);	
 					}
 				}
 			}
