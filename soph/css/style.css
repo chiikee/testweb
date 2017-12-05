@@ -14,6 +14,9 @@ div.my-message ul {
 	-webkit-margin-start: 0px;
 	-webkit-margin-end: 0px;
 	-webkit-padding-start: 40px;
+	margin-top:1em;
+	margin-bottom:1em;
+	padding-left:40px;
 }
 
 body {
