@@ -1,0 +1,183 @@
+<html>
+	<head>
+		<style>
+			.resultTable{
+				border: 1px solid black
+			}
+			.resultTable th, .resultTable td{
+				border: 1px solid black
+			}
+			.totalname{
+				font-weight: bold;
+			}
+			.totalsymbol, .totalcurrency, .totalquantity, .totalbuyPrice, .totalbuyXR, 
+			.totalnowPrice, .totalnowXR{
+				visibility: hidden;
+			}
+		</style>
+	</head>
+<body>
+	<table id="tblResult" class="resultTable"></table>
+	<hr>
+	<table>
+	<tr><td>Alpha Vantage Key</td><td><input type="text" id="txtAV"></td></tr>	
+	<tr><td>Portfolio</td><td><textarea rows=25 cols=80 id="txtPortfolio"></textarea></td></tr>
+	<tr><td></td><td><button onclick="LoadValues()">Refresh</button></td></tr>
+	<tr><td></td><td></td></tr>
+	</table>
+<script>
+
+var portfolio;
+var avKey;
+const baseCurrency="SGD";
+
+main();
+
+async function main(){
+	avKey = GetLocalCache("avkey",false);
+	document.getElementById("txtAV").value = avKey;
+
+	portfolio = GetLocalCache("portfolio",false);
+	if(portfolio===null){
+		portfolio = [
+			{name:"Google",symbol:"GOOG",currency:"USD",quantity:1,buyPrice:100,buyXR:1}
+		];
+		SetLocalCache("portfolio",portfolio,Number.MAX_SAFE_INTEGER);
+	}
+	document.getElementById("txtPortfolio").value = JSON.stringify(portfolio,null,4);
+
+	for(let stock of portfolio){
+		quote = await getQuote(stock.symbol);
+		exchangeRate = await getExchangeRate(stock.currency,baseCurrency);
+		stock.buyTotalX = stock.quantity * stock.buyPrice * stock.buyXR;
+		stock.nowPrice = quote["Global Quote"]["05. price"];
+		stock.nowXR = exchangeRate["Realtime Currency Exchange Rate"]["5. Exchange Rate"];
+		stock.nowTotalX = stock.quantity * stock.nowPrice * stock.nowXR;
+		stock.profit = stock.nowTotalX - stock.buyTotalX;
+	}
+
+	document.getElementById("tblResult").innerHTML = JSONToTable(portfolio);
+}
+
+function xhrPromise(url) {
+	return new Promise((resolve, reject) => {
+		const xhr = new XMLHttpRequest();
+		xhr.open("GET", url);
+		xhr.onload = () => resolve(xhr.response);
+		xhr.onerror = () => reject(xhr.statusText);
+		xhr.responseType = "json";
+		xhr.send();
+	});
+}
+
+async function getExchangeRate(from,to){
+	let exchange = GetLocalCache(from+to,true);
+	if(exchange===null){
+		exchange = await xhrPromise("https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="+from+"&to_currency="+to+"&apikey="+avKey);
+		if(exchange["Realtime Currency Exchange Rate"]){
+			SetLocalCache(from+to,exchange,1000*60*60);
+		}else{
+			return GetLocalCache(from+to,false);
+		}
+	}
+	return exchange;
+}
+
+async function getQuote(symbol){
+	let quote = GetLocalCache(symbol,true);
+	if(quote===null){
+		quote = await xhrPromise("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="+symbol+"&apikey="+avKey);
+		if(quote["Global Quote"]){
+			SetLocalCache(symbol,quote,1000*60*60);
+		}else{
+			return GetLocalCache(symbol,false);
+		}
+	}
+	return quote;
+}
+
+function GetLocalCache(key, checkExpiry){
+	let cache = window.localStorage.getItem(key);
+	//is it even there?
+	if(cache!==null){
+		cache = JSON.parse(cache);
+		//check the age
+		if(checkExpiry){
+			if(Date.now() - cache.storedTime > cache.storeDuration){
+				window.localStorage.removeItem(key);
+				return null;
+			}else{
+				return cache.value;
+			}
+		}else{
+			return cache.value;
+		}
+	}else{
+		return null;
+	}
+}
+
+function SetLocalCache(key,value,duration){
+	let cache = {
+		storedTime: Date.now(),
+		storeDuration: duration,
+		value: value
+	};
+	window.localStorage.setItem(key,JSON.stringify(cache));
+}
+
+function LoadValues(){
+	avKey = document.getElementById("txtAV").value;
+	SetLocalCache("avkey",avKey,Number.MAX_SAFE_INTEGER);
+	portfolio = JSON.parse(document.getElementById("txtPortfolio").value);
+	SetLocalCache("portfolio",portfolio,Number.MAX_SAFE_INTEGER);
+	main();
+}
+
+function JSONToTable(jsObj){
+	let sHtml = "";
+	let aKeys = [];
+	let totals = {"name":"total"};
+	//get headers
+	for(let oneObj of jsObj){
+		for (const key of Object.keys(oneObj)) {
+			aKeys.push(key);
+		}
+	}
+	aKeys = [...new Set(aKeys)];
+	//create headers
+	sHtml += "<thead><tr>";
+	for(let key of aKeys){
+		sHtml += "<th>"+key+"</th>";
+	}
+	sHtml += "</tr></thead>";
+	//create body
+	sHtml += "<tbody>";
+	for(let oneObj of jsObj){
+		sHtml += "<tr>";
+		for(let key of aKeys){
+			sHtml += "<td>" + oneObj[key] + "</td>";
+			if(!isNaN(oneObj[key])){
+				if(totals[key]){
+					totals[key] += oneObj[key] * 1;
+				}else{
+					totals[key] = oneObj[key] * 1;
+				}
+			}
+		}
+		sHtml += "</tr>";
+	}
+	sHtml += "</tbody>";
+
+	sHtml += "<tfoot><tr>";
+	for(let key of aKeys){
+		sHtml += "<td class=\"total"+key+"\">"+totals[key]+"</td>";
+	}
+	sHtml += "</tr></tfoot>";
+
+	return sHtml;
+}
+
+</script>
+</body>
+</html>
