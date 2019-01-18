@@ -50,8 +50,12 @@ async function main(){
 		quote = await getQuote(stock.symbol);
 		exchangeRate = await getExchangeRate(stock.currency,baseCurrency);
 		stock.buyTotalX = stock.quantity * stock.buyPrice * stock.buyXR;
-		stock.nowPrice = quote["Global Quote"]["05. price"];
-		stock.nowXR = exchangeRate["Realtime Currency Exchange Rate"]["5. Exchange Rate"];
+		if(quote){
+			stock.nowPrice = quote["Global Quote"]["05. price"];
+		}
+		if(exchangeRate){
+			stock.nowXR = exchangeRate["Realtime Currency Exchange Rate"]["5. Exchange Rate"];	
+		}
 		stock.nowTotalX = stock.quantity * stock.nowPrice * stock.nowXR;
 		stock.profit = stock.nowTotalX - stock.buyTotalX;
 	}
@@ -74,10 +78,12 @@ async function getExchangeRate(from,to){
 	let exchange = GetLocalCache(from+to,true);
 	if(exchange===null){
 		exchange = await xhrPromise("https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="+from+"&to_currency="+to+"&apikey="+avKey);
+		console.log(exchange);
 		if(exchange["Realtime Currency Exchange Rate"]){
+			console.log("Exchange get!")
 			SetLocalCache(from+to,exchange,1000*60*60);
 		}else{
-			console.log(exchange);
+			console.log("AV returning weird stuff")
 			return GetLocalCache(from+to,false);
 		}
 	}
@@ -88,10 +94,12 @@ async function getQuote(symbol){
 	let quote = GetLocalCache(symbol,true);
 	if(quote===null){
 		quote = await xhrPromise("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="+symbol+"&apikey="+avKey);
+		console.log(quote);
 		if(quote["Global Quote"]){
+			console.log("Quote get!")
 			SetLocalCache(symbol,quote,1000*60*60);
 		}else{
-			console.log(quote);
+			console.log("AV returning weird stuff")
 			return GetLocalCache(symbol,false);
 		}
 	}
