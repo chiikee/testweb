@@ -16,24 +16,23 @@
 				font-weight: bold;
 			}
 			.totalname, .totalsymbol, .totalcurrency, .totalquantity, .totalbuyPrice, .totalbuyXR, 
-			.totalprice, .totalXR, .totaltradeDate, .totalXRDate{
+			.totalprice, .totalXR, .totaltradeDate, .totalXRDate, .totalbuyDate, .totalannualised{
 				visibility: hidden;
 			}
 		</style>
 	</head>
 <body>
-	<table id="tblResult" class="resultTable"></table>
-	<hr>
+	<div id="divResult"></div>
 	<table>
+	<tr><td></td><td><button onclick="LoadValues()">Refresh</button></td></tr>
 	<tr><td>Alpha Vantage Key</td><td><input type="text" id="txtAV"></td></tr>	
 	<tr><td>Base Currency</td><td><input type="text" id="txtbaseCurrency"></td></tr>
 	<tr><td>Portfolio</td><td><textarea rows=25 cols=80 id="txtPortfolio"></textarea></td></tr>
 	<tr><td></td><td><button onclick="LoadValues()">Refresh</button></td></tr>
-	<tr><td></td><td></td></tr>
 	</table>
 <script>
 
-var portfolio;
+var portfolio,portfolios;
 var avKey;
 var baseCurrency="SGD";
 
@@ -45,32 +44,39 @@ async function main(){
 	avKey = GetLocalCache("baseCurrency",false);
 	document.getElementById("txtbaseCurrency").value = avKey;
 
-	portfolio = GetLocalCache("portfolio",false);
-	if(portfolio===null){
-		portfolio = [
+	portfolios = GetLocalCache("portfolio",false);
+	if(portfolios===null){
+		portfolios = [[
 			{name:"Google",symbol:"GOOG",currency:"USD",quantity:1,buyPrice:100,buyXR:1}
-		];
-		SetLocalCache("portfolio",portfolio,Number.MAX_SAFE_INTEGER);
+		]];
+		SetLocalCache("portfolio",portfolios,Number.MAX_SAFE_INTEGER);
 	}
-	document.getElementById("txtPortfolio").value = JSON.stringify(portfolio,null,4);
+	document.getElementById("txtPortfolio").value = JSON.stringify(portfolios,null,4);
 
-	for(let stock of portfolio){
-		quote = await getQuote(stock.symbol);
-		exchangeRate = await getExchangeRate(stock.currency,baseCurrency);
-		stock.buyTotalX = (stock.quantity * stock.buyPrice * stock.buyXR).toFixed(2);
-		if(quote){
-			stock.tradeDate = quote["Global Quote"]["07. latest trading day"];
-			stock.price = quote["Global Quote"]["05. price"];
+	document.getElementById("divResult").innerHTML = "";
+	let i=1;
+	for(let portfolio of portfolios){
+		for(let stock of portfolio){
+			quote = await getQuote(stock.symbol);
+			exchangeRate = await getExchangeRate(stock.currency,baseCurrency);
+			stock.buyTotalX = (stock.quantity * stock.buyPrice * stock.buyXR).toFixed(2);
+			if(quote){
+				stock.tradeDate = quote["Global Quote"]["07. latest trading day"];
+				stock.price = quote["Global Quote"]["05. price"];
+			}
+			if(exchangeRate){
+				stock.XRDate = exchangeRate["Realtime Currency Exchange Rate"]["6. Last Refreshed"];
+				stock.XR = exchangeRate["Realtime Currency Exchange Rate"]["5. Exchange Rate"];	
+			}
+			stock.nowTotalX = (stock.quantity * stock.price * stock.XR).toFixed(2);
+			stock.profit = (stock.nowTotalX - stock.buyTotalX).toFixed(2);
+			let ytd = (new Date() - new Date(stock.buyDate))/31556926000;
+			stock.annualised = (stock.profit/stock.buyTotalX/ytd*100).toFixed(2);
 		}
-		if(exchangeRate){
-			stock.XRDate = exchangeRate["Realtime Currency Exchange Rate"]["6. Last Refreshed"];
-			stock.XR = exchangeRate["Realtime Currency Exchange Rate"]["5. Exchange Rate"];	
-		}
-		stock.nowTotalX = (stock.quantity * stock.price * stock.XR).toFixed(2);
-		stock.profit = (stock.nowTotalX - stock.buyTotalX).toFixed(2);
+		document.getElementById("divResult").innerHTML += "<table id=\"tblResult" + i + "\" class=\"resultTable\"></table><hr>";
+		document.getElementById("tblResult"+i).innerHTML = JSONToTable(portfolio);
+		i++;
 	}
-
-	document.getElementById("tblResult").innerHTML = JSONToTable(portfolio);
 }
 
 function xhrPromise(url) {
@@ -151,8 +157,8 @@ function LoadValues(){
 	SetLocalCache("avkey",avKey,Number.MAX_SAFE_INTEGER);
 	baseCurrency = document.getElementById("txtbaseCurrency").value;
 	SetLocalCache("baseCurrency",baseCurrency,Number.MAX_SAFE_INTEGER);
-	portfolio = JSON.parse(document.getElementById("txtPortfolio").value);
-	SetLocalCache("portfolio",portfolio,Number.MAX_SAFE_INTEGER);
+	portfolios = JSON.parse(document.getElementById("txtPortfolio").value);
+	SetLocalCache("portfolio",portfolios,Number.MAX_SAFE_INTEGER);
 	main();
 }
 
