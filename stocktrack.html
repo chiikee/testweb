@@ -35,6 +35,7 @@
 var portfolio,portfolios;
 var avKey;
 var baseCurrency="SGD";
+var bWeird = false;
 
 main();
 
@@ -77,6 +78,9 @@ async function main(){
 		document.getElementById("tblResult"+i).innerHTML = JSONToTable(portfolio);
 		i++;
 	}
+	if(bWeird){
+		setTimeout(LoadValues, 61000);
+	}
 }
 
 function xhrPromise(url) {
@@ -96,9 +100,11 @@ async function getExchangeRate(from,to){
 		exchange = await xhrPromise("https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="+from+"&to_currency="+to+"&apikey="+avKey);
 		console.log(exchange);
 		if(exchange["Realtime Currency Exchange Rate"]){
+			bWeird = false;
 			console.log("Exchange get!")
 			SetLocalCache(from+to,exchange,1000*60*60);
 		}else{
+			bWeird = true;
 			console.log("AV returning weird stuff")
 			return GetLocalCache(from+to,false);
 		}
@@ -112,9 +118,11 @@ async function getQuote(symbol){
 		quote = await xhrPromise("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="+symbol+"&apikey="+avKey);
 		console.log(quote);
 		if(quote["Global Quote"]){
+			bWeird = false;
 			console.log("Quote get!")
 			SetLocalCache(symbol,quote,1000*60*60);
 		}else{
+			bWeird = true;
 			console.log("AV returning weird stuff")
 			return GetLocalCache(symbol,false);
 		}
