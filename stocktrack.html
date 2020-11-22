@@ -112,7 +112,7 @@ async function getExchangeRate(from,to){
 	return exchange;
 }
 
-async function getQuote(symbol){
+/*async function getQuote(symbol){
 	let quote = GetLocalCache(symbol,true);
 	if(quote===null){
 		quote = await xhrPromise("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="+symbol+"&apikey="+avKey);
@@ -128,8 +128,74 @@ async function getQuote(symbol){
 		}
 	}
 	return quote;
+}*/
+
+async function getQuote(symbol) {
+    let quote = GetLocalCache(symbol, true);
+    if (quote === null) {
+	if(symbol.endsWith(".SI")){
+	    quote = await getSGXQuote(symbol);
+	}else{
+	    quote = await xhrPromise("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" + symbol + "&apikey=" + avKey);
+       	}
+	console.log(quote);
+	if (quote["Global Quote"]) {
+	    bWeird = false;
+	    console.log("Quote get!")
+	    SetLocalCache(symbol, quote, 1000 * 60 * 60);
+	} else {
+	    bWeird = true;
+	    console.log("AV returning weird stuff")
+	    return GetLocalCache(symbol, false);
+	}
+    }
+    return quote;
 }
 
+async function getSGXQuote(symbol) {
+    let lookup = symbol.replace(".SI","");
+    const securities = await getSGXSecuritiesPrices();
+    let sgxQuote = securities.data.prices.find(elem => elem.nc == lookup);
+    let ltd = sgxQuote.trading_time.slice(0,4) + "-" +
+	sgxQuote.trading_time.slice(4,6) + "-" +
+	sgxQuote.trading_time.slice(6,8)
+    let quote = {
+	"Global Quote":{
+	    "07. latest trading day":ltd,
+	    "05. price":sgxQuote.lt
+	}
+    }
+    return quote;
+}
+
+async function getSGXSecuritiesPrices(){
+    const cacheKey = "sgxSecuritiesPrices";
+    let securities = GetLocalCache(cacheKey, true);
+    if(securities == null){
+	const sgxUrl = "https://api.sgx.com/securities/v1.1?excludetypes=bonds&params=nc%2Cadjusted-vwap%2Cbond_accrued_interest%2Cbond_clean_price%2Cbond_dirty_price%2Cbond_date%2Cb%2Cbv%2Cp%2Cc%2Cchange_vs_pc%2Cchange_vs_pc_percentage%2Ccx%2Ccn%2Cdp%2Cdpc%2Cdu%2Ced%2Cfn%2Ch%2Ciiv%2Ciopv%2Clt%2Cl%2Co%2Cp_%2Cpv%2Cptd%2Cs%2Csv%2Ctrading_time%2Cv_%2Cv%2Cvl%2Cvwap%2Cvwap-currency";
+	securities = await fetch(sgxUrl, {
+	    "headers": {
+	    "accept": "*/*",
+	    "accept-language": "en,en-GB;q=0.9,en-US;q=0.8",
+	    //   "cache-control": "no-cache",
+	    //   "pragma": "no-cache",
+	    //   "sec-fetch-dest": "empty",
+	    //   "sec-fetch-mode": "cors",
+	    //   "sec-fetch-site": "same-site",
+	    //   "sec-gpc": "1"
+	    },
+	    "referrer": "https://www.sgx.com/",
+	    "referrerPolicy": "strict-origin-when-cross-origin",
+	    "body": null,
+	    "method": "GET",
+	    "mode": "cors",
+	    "credentials": "omit"
+	}).then(res => res.json());
+	SetLocalCache(cacheKey, securities, 1000 * 60 * 60);
+    }
+    return securities;
+}
+	
 function GetLocalCache(key, checkExpiry){
 	let cache = window.localStorage.getItem(key);
 	//is it even there?
